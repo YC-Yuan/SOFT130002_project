@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+
+img{
+    width: 180px;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+h1{
+    font-family: 微软雅黑,monospace;
+    font-size: 32px;
+}
+
+h3 {
+    font-family: 微软雅黑, monospace;
+    font-size: 20px;
+}
+
+h2,a{
+    font-size: 24px;
+}
+
+table {
+    margin: 0 auto 0 auto;
+    horiz-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #ccad81;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #bfa801;
+    text-shadow: 5px 2px 3px #BBBBBB;
+}

@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="" />
+    <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/toTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/floatButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/floatButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/browser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/browser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/favor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/favor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/mine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/uploaded.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/uploaded.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,12 +55,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZClWt8x6GBxCQaahkwavqYXmWh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -75,25 +96,43 @@
       <workItem from="1584691339191" duration="4833000" />
       <workItem from="1584752940793" duration="3084000" />
       <workItem from="1584756098702" duration="23346000" />
+      <workItem from="1584784566656" duration="111000" />
+      <workItem from="1584794544600" duration="4193000" />
     </task>
+    <task id="LOCAL-00001" summary="-add all files">
+      <created>1584784597423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584784597423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-add all files" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add all files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584753899727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584753899727" />
-    <state x="341" y="145" key="CommitChangelistDialog2" timestamp="1584784479980">
+    <state x="341" y="145" key="CommitChangelistDialog2" timestamp="1584784594381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="341" y="145" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584784479980" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584784567520">
+    <state x="341" y="145" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584784594381" />
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1584784636314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584784567520" />
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584784636314" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584794545732">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584794545732" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1584626836577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

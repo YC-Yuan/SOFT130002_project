@@ -14,13 +14,16 @@ nav {
 nav a, #userMenu span {
     font-family: 幼圆, monospace;
     font-size: 30px;
-    margin-left: 50px;
-    padding-bottom: 10px;
     text-decoration: none;
     color: #888888;
 }
 
-#navigation a:hover, #userMenu:hover span {
+#navigation a{
+    padding-bottom: 10px;
+    margin-left: 50px;
+}
+
+#navigation a:hover, #userMenu:hover span{
     color: #222222;
     text-shadow: 4px 4px 4px #999999;
 }
@@ -44,26 +47,39 @@ nav a, #userMenu span {
 #navigation {
     text-align: left;
     min-width: 40%;
+    margin-right: 50px;
     float: left;
 }
 
 #userMenu {
     display: inline-block;
-    margin-left: 20px;
     margin-right: 50px;
     height: 58px;
 }
 
 #userMenu ul {
-    margin: 0;
-    padding: 12px 4px 0 0;
+    margin-top: 8px;
+    right: 30px;
     display: none;
     list-style: none;
 }
 
 #userMenu:hover ul, #userMenu ul:hover {
+    text-align: left;
     color: #222222;
     text-shadow: 4px 4px 4px #999999;
     display: block;
     position: fixed;
+}
+
+.icon{
+    border:3px dashed #af926f;
+    background-color: rgba(255, 255, 255, 0.2);
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+}
+
+.icon:hover,#userMenu li:hover .icon{
+    border:3px solid #75634a
 }

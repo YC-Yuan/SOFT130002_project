@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>三鱼一茶-登陆</title>
+    <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="./src/css/navigation.css">
     <link rel="stylesheet" href="./src/css/footer.css">
     <link rel="stylesheet" href="./src/css/floatButton.css">
 </head>
 <body>
-<h1>登录</h1>
+<img src="img/icon/account.png" alt="登录">
+<h1>欢迎回到三鱼一茶</h1>
 <form name="login" method="post" id="login">
-    E-mail:<input type="text" name="email" id="email" required="required">
-    <br>
-    密码:<input type="password" name="password" id="password" required="required">
-    <br>
-    <a href="./src/html/home.html">登录：<input type="submit" src="src/home.html"></a>
+    <table>
+        <tr>
+            <td><h3>E-mail:</h3></td>
+            <td><label for="email"></label><input type="text" name="email" id="email" required="required"></td>
+        </tr>
+        <tr>
+            <td><h3>密码:</h3></td>
+            <td><label for="password"></label><input type="password" name="password" id="password" required="required"></td>
+        </tr>
+    </table>
+    <a href="./src/html/home.html" onclick="alert('用户验证功能建设中')">登录</a>
 </form>
-<a href="./src/html/register.html">第一次来吗:D注册一下?</a>
+<h2>第一次来吗:D<a href="./src/html/register.html">注册一下</a>?</h2>
 <footer>
     <hr>
     <p>沪私危备案74751号</p>
