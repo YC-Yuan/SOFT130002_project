@@ -46,6 +46,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -85,10 +86,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584753899727" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584784410894">
+    <state x="341" y="145" key="CommitChangelistDialog2" timestamp="1584784479980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584784410894" />
+    <state x="341" y="145" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584784479980" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584784567520">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584784567520" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1584626836577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
