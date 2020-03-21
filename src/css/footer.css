@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    color: #888888;
+    -webkit-text-stroke: 0.1px black;
+}
+
+body {
+    background: url(../../img/background.jpg) repeat 0 0;
+}
