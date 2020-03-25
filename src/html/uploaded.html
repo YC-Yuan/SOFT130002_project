@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>三鱼一茶-上传</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/floatButton.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/upload.css">
 </head>
 <body>
 <header>
@@ -21,32 +22,31 @@
                 <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
                 <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
                 <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a></li>
+                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                </li>
             </ul>
         </div>
         <br>
     </nav>
 </header>
-<div class="upload" id="upload">
+<fieldset class="upload" id="uploadPhoto">
+    <legend>上传照片</legend>
     <div id="uploadImg">
-        <h1>上传图片</h1>
-        <img src="../../img/hottest/1.jpg">
-        <input type="button" name="upload" value="上传图片">
+        <img src="../../img/hottest/1.jpg" alt="上传的照片">
+        <br><br>
+        <input type="button" name="upload" id="upload" value="重新上传" onclick="alert('上传功能修缮中')">
     </div>
-    <div class="uploadContent">
-        图片标题：<input type="text" name="uploadTitle">
-    </div>
-    <div class="uploadContent">
-        图片描述：<input type="text" name="uploadDescription">
-    </div>
-    <div class="uploadContent">
-        拍摄国家：<input type="text" name="uploadCountry">
-    </div>
-    <div class="uploadContent">
-        拍摄城市：<input type="text" name="uploadCity">
-    </div>
-    <a href="mine.html"><input type="submit" name="uploadSubmit" value="确认上传" onclick="alert('已提交')"></a>
-</div>
+    <label for="uploadTitle">图片标题:<br><input type="text" name="uploadTitle" id="uploadTitle"></label>
+    <br><br>
+    <label for="uploadDescription">图片描述:<br><textarea name="uploadDescription" id="uploadDescription" rows="6"
+                                                      placeholder="拖动右下角标示以自定义文本框大小" cols="66"></textarea></label>
+    <br><br>
+    <label for="uploadCountry">拍摄国家:<br><input type="text" name="uploadCountry" id="uploadCountry"></label>
+    <br><br>
+    <label for="uploadCity">拍摄城市:<br><input type="text" name="uploadCity" id="uploadCity"></label>
+    <br><br>
+    <a href="mine.html"><input type="submit" name="uploadSubmit" id="uploadSubmit" value="确认上传" onclick="alert('已提交')"></a>
+</fieldset>
 <footer>
     <hr>
     <p>沪私危备案74751号</p>

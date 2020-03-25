@@ -1,0 +1,91 @@
+body{
+    height: max-content;
+}
+/*左半部分*/
+aside {
+    float: left;
+    min-width: max-content;
+    margin: 12px;
+    border: 2px dashed white;
+    height: 100%;
+}
+
+fieldset{
+    font-size: 24px;
+    margin: 24px;
+}
+
+aside label{
+    font-size: 24px;
+}
+
+fieldset:hover legend {
+    color: #af926f;
+}
+
+
+ul {
+    margin: 0;
+}
+
+li {
+    padding: 4px;
+}
+
+fieldset a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #34afab;
+}
+
+/*右半部分*/
+
+#content {
+    float: right;
+    border: 2px dashed white;
+    padding: 12px 12px 18px 12px;
+    margin: 12px;
+    -webkit-margin-collapse: collapse;
+    width:calc(100% - 317px - 48px);
+    text-align: left;
+}
+
+#content label{
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 18px;
+    margin-right: 3%;
+}
+
+td {
+    width: 25%;
+    padding: 16px;
+}
+
+table img{
+    width: 100%;
+}
+/*翻页*/
+#page{
+    text-align: center;
+}
+
+#page a,#page strong{
+    border: 1px solid #5bd5d9;
+    padding: 4px 8px 4px 8px;
+    font-size:20px;
+    margin:4px;
+    color: black;
+    text-decoration: none;
+}
+
+#page a:hover{
+    border:1px solid black;
+}
+
+#page strong{
+    background-color: rgba(91, 213, 217, 0.4);
+}

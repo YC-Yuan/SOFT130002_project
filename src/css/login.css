@@ -2,29 +2,43 @@ body {
     text-align: center;
 }
 
-img{
+img {
     width: 180px;
     height: auto;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
-h1{
-    font-family: 微软雅黑,monospace;
+h1 {
+    font-family: 微软雅黑, monospace;
     font-size: 32px;
 }
 
-h3 {
+h2 {
     font-family: 微软雅黑, monospace;
-    font-size: 20px;
-}
-
-h2,a{
     font-size: 24px;
 }
 
-table {
-    margin: 0 auto 0 auto;
-    horiz-align: center;
+form {
+    border: 4px dashed #ccad81;
+    padding: 1.2em;
+    margin: auto;
+    width: max-content;
+}
+
+form:hover {
+    border: 4px solid #bfa801;
+    box-shadow: 5px 5px 3px #BBBBBB;
+}
+
+label{
+    font-family: 微软雅黑, monospace;
+    font-size: 20px;
+    margin: 0.5em;
+    vertical-align: middle;
+}
+
+h2, a {
+    font-size: 24px;
 }
 
 a {
@@ -36,4 +50,8 @@ a {
 a:hover {
     color: #bfa801;
     text-shadow: 5px 2px 3px #BBBBBB;
+}
+
+h1:hover, h3:hover, label:hover {
+    color: #ccad81;
 }

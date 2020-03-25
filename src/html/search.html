@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>三鱼一茶-搜索页</title>
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/floatButton.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/search.css">
 </head>
 <body>
 <header>
@@ -20,72 +22,137 @@
                 <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
                 <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
                 <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a></li>
+                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                </li>
             </ul>
         </div>
         <br>
     </nav>
-    <div class="searcher" id="searcher">
-        <p>输入图片标题或描述搜索</p>
+</header>
+<div class="searcher" id="searcher">
+    <fieldset>
+        <legend>搜索你想要的图片=ω=</legend>
         <form>
-            <input type="radio" name="searchMethod" value="byTitle" checked>搜索图片标题<br>
-            <input type="text" name="titleForSearch" placeholder="在此输入"><br>
-            <input type="radio" name="searchMethod" value="byDescription">搜索图片描述<br>
-            <input type="text" name="descriptionForSearch" placeholder="在此输入"><br>
+            <fieldset>
+                <legend>
+                    <input type="radio" name="searchMethod" id="byTitle" value="byTitle" checked>搜索图片标题
+                </legend>
+                <input type="text" name="titleForSearch" id="titleForSearch" placeholder="在此输入">
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <input type="radio" name="searchMethod" id="byDescription" value="byDescription">搜索图片描述
+                </legend>
+                <textarea name="uploadDescription" id="uploadDescription" rows="6"
+                          cols="66" placeholder="在此输入 拖动右下角标示以自定义文本框大小"></textarea></label>
+            </fieldset>
             <input type="submit" value="搜索" onclick="alert('搜索功能正在装修中')">
         </form>
+    </fieldset>
+</div>
+<div class="searchResult" id="searchResult">
+    <div class="boxOfResult">
+        <h2>搜索结果</h2>
     </div>
-    <div class="searchResult" id="searchResult">
-        <p>搜索结果</p>
-        <div class="boxOfResult">
-            <a href="details.html">
-                <img src="../../img/hottest/2.jpg">
-                <h3 class="titleOfResult">图片标题</h3>
-                <p class="descriptionOfResult">
-                    图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
-            </a>
-        </div>
-        <div class="boxOfResult">
-            <a href="details.html">
-                <img src="../../img/hottest/2.jpg">
-                <h3 class="titleOfResult">图片标题</h3>
-                <p class="descriptionOfResult">
-                    图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
-            </a>
-        </div>
-        <div class="boxOfResult">
-            <a href="details.html">
-                <img src="../../img/hottest/2.jpg">
-                <h3 class="titleOfResult">图片标题</h3>
-                <p class="descriptionOfResult">
-                    图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
-            </a>
-        </div>
-        <div class="boxOfResult">
-            <a href="details.html">
-                <img src="../../img/hottest/2.jpg">
-                <h3 class="titleOfResult">图片标题</h3>
-                <p class="descriptionOfResult">
-                    图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
-            </a>
-        </div>
-        <div class="boxOfResult">
-            <a href="details.html">
-                <img src="../../img/hottest/2.jpg">
-                <h3 class="titleOfResult">图片标题</h3>
-                <p class="descriptionOfResult">
-                    图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
-            </a>
-        </div>
-        <div class="page">
-            <strong>1</strong>
-            <a href="browser.html">2</a>
-            <a href="browser.html">3</a>
-            <a href="browser.html">4</a>
-            <a href="browser.html" id="pageLast">……19302010020</a>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片1"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
         </div>
     </div>
-</header>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片2"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
+        </div>
+    </div>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片3"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
+        </div>
+    </div>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片4"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
+        </div>
+    </div>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片5"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
+        </div>
+    </div>
+    <div class="boxOfResult">
+        <a href="details.html">
+            <img src="../../img/hottest/2.jpg" alt="搜索图片6"></a>
+        <div class="boxContent">
+            <a href="details.html"><h3 class="titleOfResult">图片标题</h3></a>
+            <p class="descriptionOfResult">
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
+                图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述</p>
+        </div>
+    </div>
+    <div id="page" class="boxOfResult">
+        <a href="browser.html">上一页</a>
+        <strong>1</strong>
+        <a href="browser.html">2</a>
+        <a href="browser.html">3</a>
+        <a href="browser.html">4</a>
+        <a href="browser.html" id="pageLast">……19302010020</a>
+        <a href="browser.html">下一页</a>
+    </div>
+</div>
 <footer>
     <hr>
     <p>沪私危备案74751号</p>

@@ -1,0 +1,116 @@
+/*搜索栏*/
+fieldset {
+    margin: 24px;
+}
+
+legend {
+    font-size: 24px;
+    font-family: 幼圆, monospace;
+}
+
+input[type="text"] {
+    margin: 1em 0 1em 1em;
+    font-size: 20px;
+    width: 24em;
+    height: 2em;
+}
+
+textarea {
+    margin: 1em 0 1em 1em;
+    font-size: 20px;
+    font-family: 微软雅黑, monospace;
+}
+
+fieldset input[type="submit"] {
+    font-size: 20px;
+    margin: 12px;
+}
+
+/*结果栏*/
+#searchResult {
+    margin: 24px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0 8px #888888;
+}
+
+#searchResult h2 {
+    margin: 8px 0 8px 1em;
+    font-size: 20px;
+}
+
+.boxOfResult {
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 2px solid rgb(226, 226, 226);
+    box-shadow: 0 0 8px #888888;
+    height: max-content;
+}
+
+.boxOfResult:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.boxOfResult img {
+    float: left;
+    margin: 12px;
+    -webkit-margin-collapse: collapse;
+}
+
+.boxContent {
+    margin: 12px;
+    -webkit-margin-collapse: collapse;
+    float: right;
+    width: calc(100% - 198px);
+}
+
+.boxContent a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.boxContent h3{
+    margin: 0.15em 0 0.5em 0;
+}
+
+.boxContent h3:hover {
+    color: #af926f;
+}
+
+.boxContent p {
+    margin: 0;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+.boxContent p:hover {
+    color: #888888;
+}
+
+/*翻页*/
+#page {
+    text-align: center;
+    padding:16px;
+}
+
+#page a, #page strong {
+    border: 1px solid #5bd5d9;
+    padding: 4px 8px 4px 8px;
+    font-size: 20px;
+    margin: 4px;
+    color: black;
+    text-decoration: none;
+}
+
+#page a:hover {
+    border: 1px solid black;
+}
+
+#page strong {
+    background-color: rgba(91, 213, 217, 0.4);
+}

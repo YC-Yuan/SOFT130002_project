@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>三鱼一茶-浏览页</title>
-
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/floatButton.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/browser.css">
 </head>
 <body>
 <header>
@@ -21,60 +22,65 @@
                 <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
                 <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
                 <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a></li>
+                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                </li>
             </ul>
         </div>
         <br>
     </nav>
-    </header>
-    <div class="searcher" id="browserTitle">
-        <h3>搜索图片标题</h3>
-        <forum>
-            <input type="search" name="browserTitle">
-            <button type="submit" onclick="alert('根据输入框搜索')">搜索</button>
-        </forum>
+</header>
+<aside>
+    <div id="searcher">
+        <fieldset>
+            <legend><label for="searchByTitle">搜索图片标题</label></legend>
+            <form>
+                <input type="search" name="searchByTitle" id="searchByTitle">
+                <button type="submit" onclick="alert('根据输入框搜索')" id="searchTitle">搜索</button>
+            </form>
+        </fieldset>
     </div>
-    <div class="searcher" id="browserHotCountry">
-        <h3>热门国家</h3>
-        <ul type=" ">
-            <li><a class="houCountry" href="browser.html">中国</a></li>
-            <li><a class="houCountry" href="browser.html">日本</a></li>
-            <li><a class="houCountry" href="browser.html">意大利</a></li>
-            <li><a class="houCountry" href="browser.html">美国</a></li>
+    <fieldset id="searcherHotCountry">
+        <legend>热门国家</legend>
+        <ul>
+            <li><a class="houCountry" href="browser.html" onclick=alert("检索功能建设中")>中国</a></li>
+            <li><a class="houCountry" href="browser.html" onclick=alert("检索功能建设中")>日本</a></li>
+            <li><a class="houCountry" href="browser.html" onclick=alert("检索功能建设中")>意大利</a></li>
+            <li><a class="houCountry" href="browser.html" onclick=alert("检索功能建设中")>美国</a></li>
         </ul>
-    </div>
-    <div class="searcher" id="browser_hotCity">
-        <h3>热门城市</h3>
-        <ul type=" ">
-            <li><a class="hotCity" href="browser.html">北京</a></li>
-            <li><a class="hotCity" href="browser.html">东京</a></li>
-            <li><a class="hotCity" href="browser.html">罗马</a></li>
-            <li><a class="hotCity" href="browser.html">华盛顿</a></li>
+    </fieldset>
+    <fieldset id="searcherHotCity">
+        <legend>热门城市</legend>
+        <ul>
+            <li><a class="hotCity" href="browser.html" onclick=alert("检索功能建设中")>北京</a></li>
+            <li><a class="hotCity" href="browser.html" onclick=alert("检索功能建设中")>东京</a></li>
+            <li><a class="hotCity" href="browser.html" onclick=alert("检索功能建设中")>罗马</a></li>
+            <li><a class="hotCity" href="browser.html" onclick=alert("检索功能建设中")>华盛顿</a></li>
         </ul>
-    </div>
-    <aside class="searcher" id="browser_filter">
-        <select class="filter" id="filter_content">
-            <option value="null">按主题筛选</option>
-            <option value="city">城市</option>
-            <option value="building">建筑</option>
-            <option value="nature">自然</option>
+    </fieldset>
+</aside>
+<div id="content">
+    <form id="filter" name="filter">
+        <label for="filterContent">筛选主题</label>
+        <select class="filter" id="filterContent" name="filterContent">
+            <option value="0">请选择主题</option>
+            <option value="城市">城市</option>
+            <option value="建筑">建筑</option>
+            <option value="自然">自然</option>
         </select>
-        <select class="filter" id="filter_country">
-            <option value="null">按国家筛选</option>
-            <option value="China">中国</option>
-            <option value="Japan">日本</option>
-            <option value="Italy">意大利</option>
-            <option value="America">美国</option>
+        <label for="filterCountry">筛选国家</label>
+        <select class="filter" id="filterCountry" name="filterCountry" onchange="getCity()">
+            <option value="0">请选择国家</option>
+            <option value="中国">中国</option>
+            <option value="日本">日本</option>
+            <option value="意大利">意大利</option>
+            <option value="美国">美国</option>
         </select>
-        <select class="filter" id="filter_city">
-            <option value="null">按城市筛选</option>
-            <option value="">北京</option>
-            <option value="">东京</option>
-            <option value="">罗马</option>
-            <option value="">华盛顿</option>
+        <label for="filterCity">筛选城市</label>
+        <select class="filter" id="filterCity" name="filterCity">
+            <option value="0">请选择城市</option>
         </select>
-    </aside>
-    <div class="browserHot" id="browserHot">
+    </form>
+    <div id="searcherHot">
         <table>
             <tr>
                 <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
@@ -99,16 +105,21 @@
                 <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
                 <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
                 <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
+                <td><a href="details.html"><img src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>
             </tr>
         </table>
-        <div class="page">
+        <div id="page">
+            <a href="browser.html">上一页</a>
             <strong>1</strong>
             <a href="browser.html">2</a>
             <a href="browser.html">3</a>
             <a href="browser.html">4</a>
             <a href="browser.html" id="pageLast">……19302010020</a>
+            <a href="browser.html">下一页</a>
+
         </div>
     </div>
+</div>
 <div class="floatButton">
     <img id="refresh" onclick="alert('图片已刷新')" src="../../img/icon/refresh.png" alt="refreshButton">
     <a href="#top">
@@ -121,11 +132,31 @@
     <p>版权&copy;2001-2020 3Fish1Tea三鱼一茶 版权所有</p>
     <p>联系我们19302010020@fudan.edu.cn</p>
 </footer>
-    <script type="text/javascript">
-        function sayScript() {
-            alert('Hi!')
+<script type="text/javascript">
+    //用二维数组定义联动下拉单内容，顺序根据选项顺序以便对应
+    var city = [
+        ["上海", "昆明", "北京", "烟台"],
+        ["东京", "大阪", "镰仓"],
+        ["罗马", "米兰", "威尼斯", "佛罗伦萨"],
+        ["纽约", "旧金山", "华盛顿"],
+    ];
+
+    function getCity() {
+        //声明国家选择框对象
+        var filterCountry = document.filter.filterCountry;
+        //声明城市选择框对象
+        var filterCity = document.filter.filterCity;
+        //得到国家对应的数组
+        var cityToSelect = city[filterCountry.selectedIndex - 1];
+
+        //重置下拉框
+        filterCity.length = 1;
+
+        //将城市数组中的值填充到城市下拉框中
+        for (var i = 0; i < cityToSelect.length; i++) {
+            filterCity[i + 1] = new Option(cityToSelect[i], cityToSelect[i]);
         }
-    </script>
-</div>
+    }
+</script>
 </body>
 </html>
