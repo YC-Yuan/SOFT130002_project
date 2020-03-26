@@ -91,26 +91,3 @@ fieldset input[type="submit"] {
 .boxContent p:hover {
     color: #888888;
 }
-
-/*翻页*/
-#page {
-    text-align: center;
-    padding:16px;
-}
-
-#page a, #page strong {
-    border: 1px solid #5bd5d9;
-    padding: 4px 8px 4px 8px;
-    font-size: 20px;
-    margin: 4px;
-    color: black;
-    text-decoration: none;
-}
-
-#page a:hover {
-    border: 1px solid black;
-}
-
-#page strong {
-    background-color: rgba(91, 213, 217, 0.4);
-}

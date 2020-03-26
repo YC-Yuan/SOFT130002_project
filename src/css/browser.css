@@ -42,7 +42,7 @@ fieldset a {
 
 #content {
     float: right;
-    border: 2px dashed white;
+    border: 2px ;
     padding: 12px 12px 18px 12px;
     margin: 12px;
     -webkit-margin-collapse: collapse;
@@ -62,30 +62,11 @@ select {
 
 td {
     width: 25%;
-    padding: 16px;
+    padding: 8px;
 }
 
 table img{
     width: 100%;
-}
-/*翻页*/
-#page{
-    text-align: center;
-}
-
-#page a,#page strong{
-    border: 1px solid #5bd5d9;
-    padding: 4px 8px 4px 8px;
-    font-size:20px;
-    margin:4px;
-    color: black;
-    text-decoration: none;
-}
-
-#page a:hover{
-    border:1px solid black;
-}
-
-#page strong{
-    background-color: rgba(91, 213, 217, 0.4);
+    padding: 4px;
+    border: 2px solid #af926f;
 }
