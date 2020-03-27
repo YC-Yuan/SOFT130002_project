@@ -7,13 +7,22 @@
     box-shadow: 0 0 16px #C4C4C4;
 }
 
-em{
+#uploadStatus{
     display: block;
     margin: 24px;
     font-style: normal;
     font-weight: bolder;
     font-size: 18px;
     color: #4db2b6;
+}
+
+#uploadedImg{
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 16px #C4C4C4;
+    margin: 20px;
+    display: none;
+    width:300px;
+    height: 300px;
 }
 
 legend{
@@ -40,7 +49,11 @@ img{
 }
 
 #uploadImg input{
-
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
 }
 
 label{
@@ -70,13 +83,21 @@ textarea{
     font-family: 微软雅黑,monospace;
 }
 
-#upload,#uploadSubmit{
+#divForUpload,#uploadSubmit{
     font-size: 26px;
     background-color: #af926f;
     color: white;
+
+    position: relative;
+    display: inline-block;
+    padding: 10px 12px;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
 }
 
-#upload:hover,#uploadSubmit:hover{
+#divForUpload:hover,#uploadSubmit:hover{
     background-color: #876f55;
     color: whitesmoke;
     box-shadow: 3px 3px 4px #B8B8B8;

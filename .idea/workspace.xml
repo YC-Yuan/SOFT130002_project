@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="-3/26&#10;css√&#10;还需：本地照片上传功能">
-      <change afterPath="$PROJECT_DIR$/img/icon/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/repository.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/uploadImg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon/favor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icon/favor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon/favored.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icon/favored.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/browser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/browser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/browser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/browser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/favor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/favor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/mine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/upload.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/uploaded.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/uploaded.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/uploaded.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +37,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -106,7 +95,10 @@
       <workItem from="1585136363835" duration="3057000" />
       <workItem from="1585139457876" duration="6187000" />
       <workItem from="1585187888495" duration="627000" />
-      <workItem from="1585201345856" duration="4784000" />
+      <workItem from="1585201345856" duration="5910000" />
+      <workItem from="1585225013072" duration="898000" />
+      <workItem from="1585274401104" duration="7667000" />
+      <workItem from="1585295654701" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -129,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585139579117</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-3/26&#10;css√&#10;还需：本地照片上传功能">
+      <created>1585206148405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585206148405</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,18 +147,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201754964" />
-    <state x="341" y="82" key="CommitChangelistDialog2" timestamp="1585206143377">
+    <state x="341" y="82" key="CommitChangelistDialog2" timestamp="1585295863988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="341" y="82" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585206143377" />
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585139597054">
+    <state x="341" y="82" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585295863988" />
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585206818276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585139597054" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585201472577">
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585206818276" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585295858364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201472577" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585295858364" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1585149733942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
