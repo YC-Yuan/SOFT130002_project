@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/js/hideOverflowText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon/favor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icon/favor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/icon/favored.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icon/favored.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/browser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/browser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/repository.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/repository.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/browser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/browser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/homePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/favor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/favor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/mine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,8 @@
       <workItem from="1585225013072" duration="898000" />
       <workItem from="1585274401104" duration="7667000" />
       <workItem from="1585295654701" duration="1431000" />
-      <workItem from="1585470720796" duration="2146000" />
+      <workItem from="1585470720796" duration="2635000" />
+      <workItem from="1585484004024" duration="8174000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -140,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585296251180</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备">
+      <created>1585473271883</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585473271884</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,9 +163,14 @@
     <MESSAGE value="-3/25&#10;完成了选择栏二级联动√&#10;还需完成：&#10;两个页面css&#10;本地照片上传功能" />
     <MESSAGE value="-3/26&#10;css√&#10;还需：本地照片上传功能" />
     <MESSAGE value="-3/26 本地照片预览功能√&#10;&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
-    <option name="LAST_COMMIT_MESSAGE" value="-3/26 本地照片预览功能√&#10;&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
+    <MESSAGE value="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
+    <option name="LAST_COMMIT_MESSAGE" value="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="673" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585493017990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="673" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585493017990" />
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585201754964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,14 +179,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="341" y="82" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585473266995" />
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585296487114">
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585473350200">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585296487114" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585471319821">
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585473350200" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585484003894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585471319821" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585484003894" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1585149733942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

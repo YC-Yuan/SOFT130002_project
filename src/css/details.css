@@ -14,15 +14,14 @@
 
 /*图片面板*/
 #panel{
-    width: max-content;
     float: left;
     margin-right: 0;
 }
 
 #panel img{
     margin:20px;
-    width: 800px;
-    height: 800px;
+    width: 55vw;
+    height:55vw;
 }
 
 #panel p{
@@ -39,9 +38,10 @@
 /*右上信息栏*/
 #information{
     float: right;
-    width: calc(100% - 878px);
     font-size: 30px;
     font-family: 幼圆,sans-serif;
+    width: calc(45vw - 144px);
+    overflow: hidden;
 }
 
 #information p{
@@ -60,6 +60,7 @@
 /*信息栏中互动区*/
 #evaluate{
     margin:12px;
+    width: 400px;
 }
 
 #evaluate img{
@@ -78,17 +79,18 @@
 #description{
     padding: 12px;
     float: right;
-    width: calc(100% - 878px);
-    font-size: 16px;
-    height: 616px;
+    width: calc(45vw - 144px);
+    height: calc(55vw - 182px);
+    overflow: hidden;
 }
 
 #description p{
+    font-size: 16px;
     margin: 0;
     color: #444444;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 37;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/details.css">
     <link rel="Shortcut Icon" href="../../img/icon/icon.png" type="image/x-icon"/>
 </head>
-<body>
+<body onresize="changeLine()" onload="changeLine()">
 <header>
     <nav>
         <div id="navigation">
@@ -23,7 +23,8 @@
                 <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
                 <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
                 <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a></li>
+                <li><a href="../../index.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                </li>
             </ul>
         </div>
         <br>
@@ -43,8 +44,8 @@
             <img id="favor" onclick="alert('收藏功能修缮中')" src="../../img/icon/favor.png" alt="收藏图标"><span>8</span>
         </div>
     </div>
-    <div id="description">
-        <p>
+    <div id="description" class="textDiv">
+        <p class="textToHide">
             啊！这山！这水！wsl！图片描述图片描述图描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述描述图片描述图片描述图片描述图描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述图片描述
         </p>
     </div>
@@ -57,4 +58,5 @@
     <p>联系我们19302010020@fudan.edu.cn</p>
 </footer>
 </body>
+<script src="../js/hideOverflowText.js"></script>
 </html>

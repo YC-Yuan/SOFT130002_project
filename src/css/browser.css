@@ -46,7 +46,7 @@ fieldset a {
     padding: 12px 12px 18px 12px;
     margin: 12px;
     -webkit-margin-collapse: collapse;
-    width:calc(100% - 317px - 48px);
+    width:calc(100% - 320px - 48px);
     text-align: left;
 }
 
