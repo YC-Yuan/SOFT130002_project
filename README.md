@@ -29,7 +29,7 @@
 
 这是为过长文本省略而准备的，先说一下一般的解决方案
 
-```
+```css
 p{
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -49,14 +49,14 @@ p{
 
 在js文件中内置了说明如下：
 
-```
+```javascript
 //使用说明：将需要省略的文本设定为"textToHide"class,并嵌套在设定"textDiv"class的div中
 //为body元素设置onresize、onload时调用changeLine
 ```
 
 由此，即可实现不断容器不断变化时，省略的行数也随之变化
 
-<font color=#0099ff size=3 face="黑体">但是，文本元素容器所嵌套的div仍需要有高度设置，可以用百分比或calc()，不设置则实现不了想要的效果</font>
+**但是，文本元素容器所嵌套的div仍需要有高度设置，可以用百分比或calc()，不设置则实现不了想要的效果**
 
 2. linkedFilter.js
 
@@ -64,7 +64,7 @@ p{
 
 先按照顺序，在二维数组中储存待替换的城市
 
-```
+```javascript
 var city = [
     ["上海", "昆明", "北京", "烟台"],
     ["东京", "大阪", "镰仓"],
@@ -103,7 +103,7 @@ cover值要求图片替换内容撑满img框框，不进行伸缩变形
 
 还可以通过object-position:参数1 参数2;来设定裁剪的方位，不过默认的50% 50%正是我想的居中裁剪效果，所以不必额外设置
 
-<font color=#0099ff size=3 face="黑体">随之而来的问题是，我的img设定在table的td中，且以百分比规定宽度，高度没有办法直接用css设置成想要的正方形外框</font>
+**随之而来的问题是，我的img设定在table的td中，且以百分比规定宽度，高度没有办法直接用css设置成想要的正方形外框**
 
 于是创建了imgSquare.js，将设置了.imgSquare元素的高度设定为与高度一致
 
