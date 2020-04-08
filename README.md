@@ -30,11 +30,12 @@
 这是为过长文本省略而准备的，先说一下一般的解决方案
 
 ```
-p{overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 11;
-    -webkit-box-orient: vertical;
+p{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 11;
+	-webkit-box-orient: vertical;
 }
 ```
 
@@ -55,7 +56,7 @@ p{overflow: hidden;
 
 由此，即可实现不断容器不断变化时，省略的行数也随之变化
 
-** 但是，文本元素容器所嵌套的div仍需要有高度设置，可以用百分比或calc()，不设置则实现不了想要的效果
+<font color=#0099ff size=3 face="黑体">但是，文本元素容器所嵌套的div仍需要有高度设置，可以用百分比或calc()，不设置则实现不了想要的效果</font>
 
 2. linkedFilter.js
 
@@ -102,7 +103,7 @@ cover值要求图片替换内容撑满img框框，不进行伸缩变形
 
 还可以通过object-position:参数1 参数2;来设定裁剪的方位，不过默认的50% 50%正是我想的居中裁剪效果，所以不必额外设置
 
-**随之而来的问题是，我的img设定在table的td中，且以百分比规定宽度，高度没有办法直接用css设置成想要的正方形外框
+<font color=#0099ff size=3 face="黑体">随之而来的问题是，我的img设定在table的td中，且以百分比规定宽度，高度没有办法直接用css设置成想要的正方形外框</font>
 
 于是创建了imgSquare.js，将设置了.imgSquare元素的高度设定为与高度一致
 
