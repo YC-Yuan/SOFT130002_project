@@ -29,12 +29,14 @@
 
 这是为过长文本省略而准备的，先说一下一般的解决方案
 
-```p{overflow: hidden;
+```
+p{overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 11;
     -webkit-box-orient: vertical;
-}```
+}
+```
 
 通过以上css，可以使超出-webkit-line-clamp所设定行数的部分被省略，而如果发生省略，才末尾会显示省略号
 
