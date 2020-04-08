@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hottestNormal/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/imgSquare.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/linkedFilter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/browser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/browser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/floatButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/floatButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/homePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/repository.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/repository.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/upload.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/browser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/browser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/favor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/favor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/mine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/hideOverflowText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/hideOverflowText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +107,7 @@
       <workItem from="1586175759390" duration="6070000" />
       <workItem from="1586247999109" duration="1538000" />
       <workItem from="1586268924410" duration="1256000" />
-      <workItem from="1586305491310" duration="4722000" />
+      <workItem from="1586305491310" duration="9161000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -180,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585493788057</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="-4/8&#10;图片裁剪√&#10;详细注释√">
+      <created>1586313421902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586313421902</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,10 +192,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201754964" />
-    <state x="341" y="49" key="CommitChangelistDialog2" timestamp="1586313417545">
+    <state x="341" y="49" key="CommitChangelistDialog2" timestamp="1586318059234">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="341" y="49" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586313417545" />
+    <state x="341" y="49" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586318059234" />
     <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585493816301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
