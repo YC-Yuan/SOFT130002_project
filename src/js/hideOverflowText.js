@@ -1,4 +1,5 @@
 //使用说明：将需要省略的文本设定为"textToHide"class,并嵌套在设定"textDiv"class的div中
+//为body元素设置onresize、onload时调用changeLine
 function changeLine() {
     var div = document.getElementsByClassName('textDiv');
     //alert(1);

@@ -2,12 +2,14 @@ body {
     text-align: center;
 }
 
+/*网站图标*/
 img {
     width: 180px;
     height: auto;
     margin-bottom: 0;
 }
 
+/*各级标题文字*/
 h1 {
     font-family: 微软雅黑, monospace;
     font-size: 32px;
@@ -18,6 +20,7 @@ h2 {
     font-size: 24px;
 }
 
+/*表单内容*/
 form {
     border: 4px dashed #ccad81;
     padding: 1.2em;
@@ -37,6 +40,7 @@ label{
     vertical-align: middle;
 }
 
+/*注册引导*/
 h2, a {
     font-size: 24px;
 }
@@ -47,6 +51,7 @@ a {
     font-weight: bold;
 }
 
+/*文字hover统一设置*/
 a:hover {
     color: #bfa801;
     text-shadow: 5px 2px 3px #BBBBBB;

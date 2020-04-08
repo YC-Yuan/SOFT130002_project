@@ -5,6 +5,7 @@ footer {
     -webkit-text-stroke: 0.1px black;
 }
 
+/*顺便设置了每个页面都要用到的背景*/
 body {
     background: url(../../img/background.jpg) repeat 0 0;
 }

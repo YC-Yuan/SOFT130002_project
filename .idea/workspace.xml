@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/hideOverflowText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hottestNormal/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/imgSquare.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/linkedFilter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/browser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/browser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/floatButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/floatButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/homePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/homePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/repository.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/repository.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/upload.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/browser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/browser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/favor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/favor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/mine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/hideOverflowText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/hideOverflowText.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +86,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\15344\Desktop\Web仓库\SOFT130002_project\src\js" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -106,7 +124,12 @@
       <workItem from="1585274401104" duration="7667000" />
       <workItem from="1585295654701" duration="1431000" />
       <workItem from="1585470720796" duration="2635000" />
-      <workItem from="1585484004024" duration="8174000" />
+      <workItem from="1585484004024" duration="8398000" />
+      <workItem from="1585528581288" duration="1629000" />
+      <workItem from="1586175759390" duration="6070000" />
+      <workItem from="1586247999109" duration="1538000" />
+      <workItem from="1586268924410" duration="1256000" />
+      <workItem from="1586305491310" duration="4722000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -150,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585473271884</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="-3/29 &#10;js优化溢出文本省略√&#10;&#10;优化主页浮动比例&#10;图片裁剪&amp;移动适应">
+      <created>1585493788057</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585493788057</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +194,9 @@
     <MESSAGE value="-3/26&#10;css√&#10;还需：本地照片上传功能" />
     <MESSAGE value="-3/26 本地照片预览功能√&#10;&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
     <MESSAGE value="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
-    <option name="LAST_COMMIT_MESSAGE" value="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
+    <MESSAGE value="-3/29 &#10;js优化溢出文本省略√&#10;&#10;优化主页浮动比例&#10;图片裁剪&amp;移动适应" />
+    <MESSAGE value="-4/8&#10;图片裁剪√&#10;详细注释√" />
+    <option name="LAST_COMMIT_MESSAGE" value="-4/8&#10;图片裁剪√&#10;详细注释√" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585493017990">
@@ -175,18 +207,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201754964" />
-    <state x="341" y="82" key="CommitChangelistDialog2" timestamp="1585473266995">
+    <state x="341" y="49" key="CommitChangelistDialog2" timestamp="1586313417545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="341" y="82" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585473266995" />
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585473350200">
+    <state x="341" y="49" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586313417545" />
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585493816301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585473350200" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585484003894">
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585493816301" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586305492315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585484003894" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586305492315" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1585149733942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

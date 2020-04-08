@@ -1,15 +1,16 @@
 #page {
     text-align: center;
-    padding:16px;
+    padding:0;
 }
 
 #page a, #page strong {
     border: 1px solid #5bd5d9;
-    padding: 4px 8px 4px 8px;
+    padding: 4px 8px;
     font-size: 20px;
     margin: 4px;
     color: black;
     text-decoration: none;
+    display: inline-block;
 }
 
 #page a:hover {

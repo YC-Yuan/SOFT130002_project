@@ -1,7 +1,7 @@
 body{
     height: max-content;
 }
-/*左半部分*/
+/*左半部分工具栏*/
 aside {
     float: left;
     min-width: max-content;
@@ -38,8 +38,11 @@ fieldset a {
     color: #34afab;
 }
 
-/*右半部分*/
+fieldset a:hover{
+    color: #5bd5d9;
+}
 
+/*右半部分筛选+浏览*/
 #content {
     float: right;
     border: 2px ;
@@ -59,16 +62,17 @@ select {
     font-size: 18px;
     margin-right: 3%;
 }
-
+/*下为浏览图片*/
 td {
     width: 25%;
     padding: 8px;
 }
 
 table img{
-    width: 100%;
     padding: 4px;
     border: 2px solid #af926f;
+    object-fit: cover;
+    width:100%;
 }
 
 /*隐藏布局用工具图*/

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/browser.css">
     <link rel="Shortcut Icon" href="../../img/icon/icon.png" type="image/x-icon"/>
 </head>
-<body>
+<body onload="shapeSquare()" onresize="shapeSquare()">
 <header>
     <nav>
         <div id="navigation">
@@ -95,28 +95,28 @@
     <div id="searcherHot">
         <table>
             <tr>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/1.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/2.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/2.jpg" alt="浏览图片" class="squareImg"></a></td>
             </tr>
             <tr>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/3.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/4.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/3.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/4.jpg" alt="浏览图片" class="squareImg"></a></td>
             </tr>
             <tr>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/5.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/6.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/6.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottestNormal/5.jpg" alt="浏览图片" class="squareImg"></a></td>
             </tr>
             <tr>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
-                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片" class="squareImg"></a></td>
+                <td><a href="details.html"><img src="../../img/hottest/1.jpg" alt="浏览图片" class="squareImg"></a></td>
                 <td ><a href="details.html"><img class="tool" src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>
             </tr>
         </table>
@@ -143,31 +143,7 @@
     <p>版权&copy;2001-2020 3Fish1Tea三鱼一茶 版权所有</p>
     <p>联系我们19302010020@fudan.edu.cn</p>
 </footer>
-<script type="text/javascript">
-    //用二维数组定义联动下拉单内容，顺序根据选项顺序以便对应
-    var city = [
-        ["上海", "昆明", "北京", "烟台"],
-        ["东京", "大阪", "镰仓"],
-        ["罗马", "米兰", "威尼斯", "佛罗伦萨"],
-        ["纽约", "旧金山", "华盛顿"],
-    ];
-
-    function getCity() {
-        //声明国家选择框对象
-        var filterCountry = document.filter.filterCountry;
-        //声明城市选择框对象
-        var filterCity = document.filter.filterCity;
-        //得到国家对应的数组
-        var cityToSelect = city[filterCountry.selectedIndex - 1];
-
-        //重置下拉框
-        filterCity.length = 1;
-
-        //将城市数组中的值填充到城市下拉框中
-        for (var i = 0; i < cityToSelect.length; i++) {
-            filterCity[i + 1] = new Option(cityToSelect[i], cityToSelect[i]);
-        }
-    }
-</script>
+<script src="../js/linkedFilter.js"></script>
+<script src="../js/imgSquare.js"></script>
 </body>
 </html>

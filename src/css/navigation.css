@@ -3,6 +3,7 @@ body {
     margin: 0;
 }
 
+/*导航栏整体设置，避免浮动后换行溢出框框*/
 nav {
     text-align: right;
     white-space: nowrap;
@@ -11,6 +12,7 @@ nav {
     background: white 0 0;
 }
 
+/*navigation为左边导航条目，userMenu为个人中心相关*/
 nav a, #userMenu span {
     font-family: 幼圆, monospace;
     font-size: 30px;
@@ -72,6 +74,7 @@ nav a, #userMenu span {
     position: fixed;
 }
 
+/*icon类设置个人中心链接前的图标*/
 .icon{
     border:3px dashed #af926f;
     background-color: rgba(255, 255, 255, 0.2);
@@ -81,5 +84,9 @@ nav a, #userMenu span {
 }
 
 .icon:hover,#userMenu li:hover .icon{
-    border:3px solid #75634a
+    border:3px solid #75634a;
+}
+
+.currentMenu .icon{
+    border:3px solid #75634a;
 }
