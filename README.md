@@ -1,6 +1,8 @@
 # SOFT130002_project
 19302010020 袁逸聪
+
 [Git地址](https://github.com/YC-Yuan/SOFT130002_project)
+
 [GitPages地址](https://yc-yuan.github.io/SOFT130002_project/)
 
 ## 项目完成情况
