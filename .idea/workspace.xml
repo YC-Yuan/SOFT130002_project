@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/imgSquare.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/imgSquare.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,9 @@
       <workItem from="1586175759390" duration="6070000" />
       <workItem from="1586247999109" duration="1538000" />
       <workItem from="1586268924410" duration="1256000" />
-      <workItem from="1586305491310" duration="9161000" />
+      <workItem from="1586305491310" duration="10117000" />
+      <workItem from="1586345722373" duration="3130000" />
+      <workItem from="1586349235600" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -165,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586313421902</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="-4/8&#10;图片裁剪√&#10;详细注释√&#10;设计文档√">
+      <created>1586318237084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586318237084</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +190,8 @@
     <MESSAGE value="-3/29 &#10;细节修复√&#10;根据补充文档修改√&#10;bonus：&#10;5.1其他规格图片自由裁剪&#10;5.2响应式布局-改变浏览器/移动设备" />
     <MESSAGE value="-3/29 &#10;js优化溢出文本省略√&#10;&#10;优化主页浮动比例&#10;图片裁剪&amp;移动适应" />
     <MESSAGE value="-4/8&#10;图片裁剪√&#10;详细注释√" />
-    <option name="LAST_COMMIT_MESSAGE" value="-4/8&#10;图片裁剪√&#10;详细注释√" />
+    <MESSAGE value="-4/8&#10;图片裁剪√&#10;详细注释√&#10;设计文档√" />
+    <option name="LAST_COMMIT_MESSAGE" value="-4/8&#10;图片裁剪√&#10;详细注释√&#10;设计文档√" />
   </component>
   <component name="WindowStateProjectService">
     <state x="673" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585493017990">
@@ -192,18 +202,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="316" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585201754964" />
-    <state x="341" y="49" key="CommitChangelistDialog2" timestamp="1586318059234">
+    <state x="341" y="49" key="CommitChangelistDialog2" timestamp="1586318234801">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="341" y="49" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586318059234" />
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1585493816301">
+    <state x="341" y="49" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586318234801" />
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2" timestamp="1586318306736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585493816301" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586305492315">
+    <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586318306736" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586349881357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586305492315" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586349881357" />
     <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1585149733942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -7,7 +7,13 @@ function shapeSquare() {
         //alert('loop entered');
         var width = parseInt(window.getComputedStyle(img[i]).width);
         //alert('width declared'+ width);
+
+        //alert(typeof (img[i].style.width));
+        //alert('string content:'+(img[i].style.width));
+
+        //img[i].style.height = window.getComputedStyle(img[i]).width;
         img[i].style.height = width.toString()+'px';
+
         //alert('height assigned');
         //alert(parseInt(window.getComputedStyle(img[i]).height)+"  "+parseInt(window.getComputedStyle(img[i]).width));
     }
