@@ -82,6 +82,18 @@ var city = [
 
 根据国家选择框对应的被选中序号，将城市选择框内容修改为二维数组中对应的数组，一一替换
 
+### 浏览器兼容
+
+pj要求页面兼容chrome和firefox
+
+测试的效果最大区别在于详情页面中图片介绍文本
+
+如js部分的1.部分，详情页通过js动态计算应省略的行数
+
+然而firefox运行js是不支持getComputedStyle函数返回复合属性，导致不能获取计算需要的padding和margin
+
+因而将参数从对应元素的padding改为paddingTop，即可兼容firefox（事实上，chrome返回符合属性时也是直接返回paddingTop和marginTop）
+
 ## Bonus完成情况与解决方法
 
 ### 图片裁剪

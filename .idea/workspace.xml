@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d90efa94-f075-42d4-bb3b-5c1c9ff9b895" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/imgSquare.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/imgSquare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/hideOverflowText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/hideOverflowText.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +111,7 @@
       <workItem from="1586305491310" duration="10117000" />
       <workItem from="1586345722373" duration="3130000" />
       <workItem from="1586349235600" duration="755000" />
+      <workItem from="1586587506272" duration="3102000" />
     </task>
     <task id="LOCAL-00001" summary="-add all files">
       <created>1584784597423</created>
@@ -210,14 +212,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="252" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586318306736" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586349881357">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586587509155">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586349881357" />
-    <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1585149733942">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586587509155" />
+    <state x="348" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1586591070462">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="348" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585149733942" />
+    <state x="348" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586591070462" />
     <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1585041570921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

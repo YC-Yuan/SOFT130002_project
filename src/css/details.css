@@ -77,20 +77,20 @@
 
 /*右下描述栏*/
 #description{
-    padding: 12px;
+    padding: 12px 13px 14px 15px;
     float: right;
     width: calc(45vw - 144px);
     height: calc(55vw - 182px);
     overflow: hidden;
 }
 
-#description p{
+#description p {
     font-size: 16px;
     margin: 0;
     color: #444444;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
 }
