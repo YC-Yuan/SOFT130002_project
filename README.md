@@ -32,7 +32,7 @@
 
 共4个js文件，其中imgSquare.js、uploadImg.js用于bonus，在后面介绍
 
-1. hideOverflowText.js
+1. textEllipsis.js
 
 这是为过长文本省略而准备的，先说一下一般的解决方案
 
@@ -72,7 +72,7 @@ p{
 先按照顺序，在二维数组中储存待替换的城市
 
 ```javascript
-var city = [
+const city = [
     ["上海", "昆明", "北京", "烟台"],
     ["东京", "大阪", "镰仓"],
     ["罗马", "米兰", "威尼斯", "佛罗伦萨"],

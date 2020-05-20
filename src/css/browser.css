@@ -1,25 +1,26 @@
-body{
+body {
     height: max-content;
 }
+
 /*左半部分工具栏*/
 aside {
-    float: left;
-    min-width: max-content;
-    margin: 12px;
+    white-space: nowrap;
     border: 2px dashed white;
     height: 100%;
+    max-height: 714px;
 }
 
-fieldset{
+#searcher,.hotSection {
+    overflow: hidden;
     font-size: 24px;
     margin: 24px;
 }
 
-aside label{
+h3 {
     font-size: 24px;
 }
 
-fieldset:hover legend {
+.hotSection:hover h3 {
     color: #af926f;
 }
 
@@ -32,28 +33,24 @@ li {
     padding: 4px;
 }
 
-fieldset a {
+.hotSection a {
     font-size: 20px;
     text-decoration: none;
     color: #34afab;
 }
 
-fieldset a:hover{
+.hotSection a:hover {
     color: #5bd5d9;
 }
 
 /*右半部分筛选+浏览*/
 #content {
-    float: right;
-    border: 2px ;
-    padding: 12px 12px 18px 12px;
-    margin: 12px;
-    -webkit-margin-collapse: collapse;
-    width:calc(100% - 320px - 48px);
+    border: 2px;
+    -webkit-margin-collapse: collapse;;
     text-align: left;
 }
 
-#content label{
+#content label {
     font-size: 24px;
     margin-right: 10px;
 }
@@ -62,20 +59,20 @@ select {
     font-size: 18px;
     margin-right: 3%;
 }
+
 /*下为浏览图片*/
 td {
     width: 25%;
     padding: 8px;
 }
 
-table img{
+table img {
     padding: 4px;
     border: 2px solid #af926f;
-    object-fit: cover;
-    width:100%;
+    width: 100%;
 }
 
 /*隐藏布局用工具图*/
-.tool{
+.tool {
     border: 0 solid black;
 }

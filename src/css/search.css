@@ -1,10 +1,10 @@
 /*搜索栏*/
-fieldset {
+.searchDiv {
     margin: 24px;
 }
 
-legend {
-    font-size: 24px;
+h2 {
+    font-size: 32px;
     font-family: 幼圆, monospace;
 }
 
@@ -21,7 +21,7 @@ textarea {
     font-family: 微软雅黑, monospace;
 }
 
-fieldset input[type="submit"] {
+.searchDiv input[type="submit"] {
     font-size: 20px;
     margin: 12px;
 }
@@ -29,65 +29,21 @@ fieldset input[type="submit"] {
 /*结果栏*/
 #searchResult {
     margin: 24px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    box-shadow: 0 0 8px #888888;
-}
-
-#searchResult h2 {
-    margin: 8px 0 8px 1em;
-    font-size: 20px;
 }
 
 .boxOfResult {
-    background-color: rgba(255, 255, 255, 0.45);
-    border: 2px solid rgb(226, 226, 226);
+    border: 1px solid #af926f;
     box-shadow: 0 0 8px #888888;
-    height: max-content;
-}
-
-.boxOfResult:after {
-    content: " ";
-    display: table;
-    clear: both;
+    height: 200px;
 }
 
 .boxOfResult img {
     float: left;
     margin: 12px;
     -webkit-margin-collapse: collapse;
+    height:calc(100% - 24px);
 }
 
 .boxContent {
-    margin: 12px;
     -webkit-margin-collapse: collapse;
-    float: right;
-    width: calc(100% - 198px);
-}
-
-.boxContent a {
-    text-decoration: none;
-    font-size: 20px;
-    color: black;
-}
-
-.boxContent h3{
-    margin: 0.15em 0 0.5em 0;
-}
-
-.boxContent h3:hover {
-    color: #af926f;
-}
-
-.boxContent p {
-    margin: 0;
-    color: black;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
-}
-
-.boxContent p:hover {
-    color: #888888;
 }
