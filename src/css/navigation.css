@@ -60,6 +60,7 @@ nav a, #userMenu span {
     right: 30px;
     display: none;
     list-style: none;
+    z-index: 10;
 }
 
 #userMenu:hover ul, #userMenu ul:hover {
@@ -68,6 +69,10 @@ nav a, #userMenu span {
     text-shadow: 4px 4px 4px #999999;
     display: block;
     position: fixed;
+}
+
+#userMenu:hover ul a:hover{
+    text-decoration: none;!important;
 }
 
 /*icon类设置个人中心链接前的图标*/

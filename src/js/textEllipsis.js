@@ -1,32 +1,43 @@
 //使用说明：将需要省略的文本设定为"content-ellipsis"class,其容器设定为"container-ellipsis"class
 changeLine();
-console.log("loaded");
 
 window.addEventListener("resize", changeLine, false);
 
 function changeLine() {
+    //console.log("changeLine called");
     let container = document.getElementsByClassName('container-ellipsis');
     let content = document.getElementsByClassName('content-ellipsis');
     for (let i = 0; i < content.length; i++) {
-        let height = parseInt(window.getComputedStyle(container[i]).height);
-        height-=parseInt(window.getComputedStyle(container[i]).paddingTop);
-        height-=parseInt(window.getComputedStyle(container[i]).paddingBottom);
+        let containerStyle = window.getComputedStyle(container[i]);
+        let contentStyle = window.getComputedStyle(content[i]);
+        let height = parseInt((containerStyle).height);
+        height -= parseInt((containerStyle).paddingTop);
+        height -= parseInt((containerStyle).paddingBottom);
+        //console.log("height for container is " + height);
         //此时height为容器可用高度
         let children = container[i].children;
+        //console.log(children.length);
         for (let j = 0; j < children.length; j++) {
             if (children[j] !== content[i]) {
-                height -=parseInt(window.getComputedStyle(children[j]).height);
-                height-=parseInt(window.getComputedStyle(children[j]).marginTop);
-                height-=parseInt(window.getComputedStyle(children[j]).marginBottom);
+                let childrenStyle = window.getComputedStyle(children[j]);
+                height -= parseInt(childrenStyle.height);
+                height -= parseInt(childrenStyle.marginTop);
+                height -= parseInt(childrenStyle.marginBottom);
+                // console.log("height:"+childrenStyle.height+" m-top:"+childrenStyle.marginTop+" m-bottom:"+childrenStyle.marginBottom);
+                // console.log("height after children " + j + children[j].textContent +" considered is " + height);
             }
         }
         //此时height为文本元素可用高度
-        height -= (parseInt(window.getComputedStyle(content[i]).marginTop));
-        height -= (parseInt(window.getComputedStyle(content[i]).marginBottom));
-        height -= (parseInt(window.getComputedStyle(content[i]).paddingTop));
-        height -= (parseInt(window.getComputedStyle(content[i]).paddingBottom));
+        height -= (parseInt(contentStyle.marginTop));
+        height -= (parseInt(contentStyle.marginBottom));
+        height -= (parseInt(contentStyle.paddingTop));
+        height -= (parseInt(contentStyle.paddingBottom));
+        //console.log("p-top:"+contentStyle.paddingTop+"p-bottom:"+contentStyle.marginBlockEnd+" m-top:"+contentStyle.marginTop+" m-bottom:"+contentStyle.marginBottom);
+        //console.log("height for text is " + height);
         //此时高度为文本内容可用高度
-        let line=Math.floor(height/parseFloat(window.getComputedStyle(content[i]).lineHeight));
-        content[i].style.webkitLineClamp=line.toString();
+        let line = Math.floor(height / parseFloat(contentStyle.lineHeight));
+        content[i].style.webkitLineClamp = line.toString();
+        //console.log("final line number is " + line);
+        content[i].style.margin = "0px";
     }
 }

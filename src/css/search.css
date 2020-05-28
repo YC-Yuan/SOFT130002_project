@@ -32,8 +32,7 @@ textarea {
 }
 
 .boxOfResult {
-    border: 1px solid #af926f;
-    box-shadow: 0 0 8px #888888;
+    border-top: 1px solid #444444;
     height: 200px;
 }
 
