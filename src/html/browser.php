@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三鱼一茶-浏览页</title>
+
+    <!--bootstrap4-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap4/css/bootstrap.css">
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/browser.css">
+
+    <!--icon-->
+    <link rel="Shortcut Icon" href="../../img/icon/icon.png" type="image/x-icon"/>
+
+</head>
+<body>
+<header>
+    <!--navigation begin-->
+    <nav>
+        <div id="navigation">
+            <a href="home.php">首页</a>
+            <a class="currentPage" href="browser.php">浏览页</a>
+            <a href="search.html">搜索页</a>
+        </div>
+        <div id="userMenu"><span>个人中心</span>
+            <ul>
+                <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
+                <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
+                <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
+                <li><a href="login.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                </li>
+            </ul>
+        </div>
+        <br>
+    </nav>
+    <!--navigation end-->
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 p-3 m-0">
+            <!--aside begin-->
+            <aside class="bd-form">
+                <div id="searcher">
+                    <label class="text-nowrap" for="searchByTitle">搜索图片标题</label>
+                    <form>
+                        <input type="search" name="searchByTitle" id="searchByTitle" class="w-75">
+                        <button type="submit" onclick="alert('搜索功能建设中')" id="searchTitle">搜索</button>
+                    </form>
+                </div>
+                <div class="hotSection">
+                    <h3 class="text-nowrap"> 热门主题</h3>
+                    <ul>
+                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>自然</a></li>
+                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>城市</a></li>
+                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>建筑</a></li>
+                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>人像</a></li>
+                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>动物</a></li>
+                    </ul>
+                </div>
+                <div class="hotSection">
+                    <h3 class="text-nowrap">热门国家</h3>
+                    <ul>
+                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>中国</a></li>
+                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>日本</a></li>
+                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>意大利</a></li>
+                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>美国</a></li>
+                    </ul>
+                </div>
+                <div class="hotSection">
+                    <h3 class="text-nowrap">热门城市</h3>
+                    <ul>
+                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>北京</a></li>
+                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>东京</a></li>
+                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>罗马</a></li>
+                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>华盛顿</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!--aside end-->
+        </div>
+        <div class="col-9 p-3 m-0">
+            <!--browser begin-->
+            <div id="content">
+                <form id="filter" name="filter">
+                    <label class="text-nowrap" for="filterContent">筛选主题</label>
+                    <select class="filter" id="filterContent" name="filterContent">
+                        <option value="0">请选择主题</option>
+                        <option value="城市">城市</option>
+                        <option value="建筑">建筑</option>
+                        <option value="自然">自然</option>
+                    </select>
+                    <label class="text-nowrap" for="filterCountry">筛选国家</label>
+                    <select class="filter" id="filterCountry" name="filterCountry" onchange="getCity()">
+                        <option value="0">请选择国家</option>
+                        <option value="中国">中国</option>
+                        <option value="日本">日本</option>
+                        <option value="意大利">意大利</option>
+                        <option value="美国">美国</option>
+                    </select>
+                    <label class="text-nowrap" for="filterCity">筛选城市</label>
+                    <select class="filter" id="filterCity" name="filterCity">
+                        <option value="0">请选择城市</option>
+                    </select>
+                </form>
+                <div id="searcherHot">
+                        <?php
+                        require_once('config.php');
+
+                        function echoTable()
+                        {
+                            try {
+                                $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
+                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                                //还没想好怎么检索
+                                $sql = 'SELECT travelimage.* FROM travelimage';
+                                $result = $pdo->query($sql);
+                                $rowNum = $result->rowCount();
+
+                                echo '<table>';
+                                for ($i = 0; $i < 4; $i++) {
+                                    echo '<tr>';
+                                    for ($j = 0; $j < 4; $j++) {
+                                        $row = $result->fetch();
+                                        echoTdImg($row);
+                                    }
+                                    echo '</tr>';
+                                }
+                               // echo '<td><a href="details.php"><img class="tool" src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>';
+                                echo '</table>';
+                                $pdo = null;
+                            } catch (PDOException $e) {
+                                die($e->getMessage());
+                            }
+                        }
+
+                        function echoTdImg($img)
+                        {
+                            $imgPath = $img['PATH'];
+                            $imgId = $img['ImageID'];
+                            echo '<td>';
+                            echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/large/' . $imgPath . '" alt="浏览图片" class="squareImg"></a>';
+                            echo '</td>';
+                        }
+
+                        echoTable();
+                        ?>
+                    <div id="page">
+                        <a href="browser.html">上一页</a>
+                        <strong>1</strong>
+                        <a href="browser.html">2</a>
+                        <a href="browser.html">3</a>
+                        <a href="browser.html">4</a>
+                        <a href="browser.html" id="pageLast">……19302010020</a>
+                        <a href="browser.html">下一页</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--browser end-->
+        </div>
+    </div>
+</div>
+
+<!--buttons begin-->
+<div class="floatButton">
+    <img id="refresh" onclick="shapeSquare()" src="../../img/icon/refresh.png" alt="refreshButton">
+    <a href="#navigation">
+        <img id="toTop" src="../../img/icon/toTop.png" alt="toTopButton">
+    </a>
+</div>
+<!--buttons end-->
+
+<!--footer begin-->
+<footer>
+    <hr>
+    <p>沪私危备案74751号</p>
+    <p>版权&copy;2001-2020 3Fish1Tea三鱼一茶 版权所有</p>
+    <p>联系我们19302010020@fudan.edu.cn</p>
+</footer>
+<!--footer end-->
+
+<!--bootstrap4-->
+<script src="../bootstrap4/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap4/popper.min.js"></script>
+<script src="../bootstrap4/js/bootstrap.js"></script>
+
+<!--js-->
+<script src="../js/imgSquare.js"></script>
+<script src="../js/linkedFilter.js"></script>
+</body>
+</html>
