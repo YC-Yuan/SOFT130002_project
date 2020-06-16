@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>三鱼一茶-主页</title>
+    <title>3Fish1Tea-Home</title>
 
     <!--bootstrap4-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,23 +19,46 @@
 
 </head>
 <body>
+
+<!--url process start-->
+<?php
+session_start();
+$random = false;
+if (isset($_GET['refresh'])) {
+    $random = true;
+}
+require_once('../php/config.php');
+require_once('../php/homeQuery.php');
+?>
+<!--url process end-->
+
 <header>
     <!--navigation begin-->
     <nav>
         <div id="navigation">
-            <a class="currentPage" href="home.php">首页</a>
-            <a href="browser.php">浏览页</a>
-            <a href="search.html">搜索页</a>
+            <a class="currentPage" href="home.php">Home</a>
+            <a href="browser.php">Browser</a>
+            <a href="search.php">Searcher</a>
         </div>
-        <div id="userMenu"><span>个人中心</span>
+        <?php
+        //如果登陆了，正常展示，最后一个为退出登录
+        if (isset($_SESSION['UID'])) {
+            echo '<div id="userMenu"><span>UserCenter</span>
             <ul>
-                <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
-                <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
-                <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="login.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                <li><a href="upload.php"><img src="../../img/icon/upload.png" alt="upload" class="icon"> Upload</a>
+                </li>
+                <li><a href="mine.php"><img src="../../img/icon/photo.png" alt="myphoto" class="icon"> MyPhoto</a></li>
+                <li><a href="favor.php"><img src="../../img/icon/favored.png" alt="favor" class="icon"> MyFavor</a>
+                </li>
+                <li><a href="../php/logout.php"><img src="../../img/icon/logout.png" alt="logout" class="icon"> Logout</a>
                 </li>
             </ul>
-        </div>
+        </div>';
+        } //如果没登录，整个改成登录
+        else {
+            echo '<div id="userMenu"><a href="login.php">Login</a>';
+        }
+        ?>
         <br>
     </nav>
     <!--navigation end-->
@@ -67,43 +90,22 @@
 
 <!--hotImages begin-->
 <?php
-require_once('config.php');
 function echoHotDiv($random)
 {
-    try {
-        $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if ($random) $result = getHotRandom();
+    else $result = getHot();
 
-        //按收藏数量排序选择图片
-        $sql = 'SELECT travelimage.* FROM travelimage
-           INNER JOIN travelimagefavor on travelimage.ImageID =  travelimagefavor.ImageID
-             GROUP BY travelimage.ImageID
-             ORDER BY COUNT(travelimagefavor.ImageID) DESC';
-        $result = $pdo->query($sql);
-        $rowNum = $result->rowCount();
-
-        if ($random) {
-            $time = rand(0, $rowNum - 6);
-            for ($i = 0; $i < $time; $i++) {
-                $row = $result->fetch();
-            }
-        }
-
-        for ($i = 0; $i < 3; $i++) {
-            echo '<div class="row  mx-0">';
-            echo '<div class="col-12 col-xl-6 my-2">';
-            $row = $result->fetch();
-            echoHotImg($row);
-            echo '</div>';
-            echo '<div class="col-12 col-xl-6 my-2">';
-            $row = $result->fetch();
-            echoHotImg($row);
-            echo '</div>';
-            echo '</div>';
-        }
-        $pdo = null;
-    } catch (PDOException $e) {
-        die($e->getMessage());
+    for ($i = 1; $i <= 3; $i++) {
+        echo '<div class="row  mx-0">';
+        echo '<div class="col-12 col-xl-6 my-2">';
+        $row = $result->fetch();
+        echoHotImg($row);
+        echo '</div>';
+        echo '<div class="col-12 col-xl-6 my-2">';
+        $row = $result->fetch();
+        echoHotImg($row);
+        echo '</div>';
+        echo '</div>';
     }
 }
 
@@ -127,17 +129,13 @@ function echoHotImg($img)
 ?>
 <div class="homeHot container-fluid" id="homeHot">
     <?php
-    $random = false;
-    if (isset($_GET['refresh'])) {
-        $random = true;
-    }
     echoHotDiv($random);
     ?>
 </div>
 <!--hotImages end-->
 
 <!--buttons begin-->
-<div class="floatButton">
+<div class="floatButton-home">
     <a href="home.php?refresh=true">
         <img id="refresh" src="../../img/icon/refresh.png" alt="refreshButton">
     </a>

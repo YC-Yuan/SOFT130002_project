@@ -13,15 +13,6 @@ aside{
     margin: 24px;
 }
 
-h3 {
-    font-size: 24px;
-}
-
-.hotSection:hover h3 {
-    color: #af926f;
-}
-
-
 ul {
     margin: 0;
 }

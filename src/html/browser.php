@@ -19,23 +19,56 @@
 
 </head>
 <body>
+
+<!--url process start-->
+<?php
+session_start();
+
+require_once('../php/browserQuery.php');
+require_once('../php/query.php');
+$pageNum = 0;
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+if (isset($_GET['keyword'])) {
+    $keyword = $_GET['keyword'];
+} else {
+    $keyword = '';
+}
+
+?>
+<!--url process end-->
+
 <header>
     <!--navigation begin-->
     <nav>
         <div id="navigation">
-            <a href="home.php">首页</a>
-            <a class="currentPage" href="browser.php">浏览页</a>
-            <a href="search.html">搜索页</a>
+            <a href="home.php">Home</a>
+            <a class="currentPage" href="browser.php">Browser</a>
+            <a href="search.php">Searcher</a>
         </div>
-        <div id="userMenu"><span>个人中心</span>
+        <?php
+        //如果登陆了，正常展示，最后一个为退出登录
+        if (isset($_SESSION['UID'])) {
+            echo '<div id="userMenu"><span>UserCenter</span>
             <ul>
-                <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
-                <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
-                <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="login.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                <li><a href="upload.php"><img src="../../img/icon/upload.png" alt="upload" class="icon"> Upload</a>
+                </li>
+                <li><a href="mine.php"><img src="../../img/icon/photo.png" alt="myphoto" class="icon"> MyPhoto</a></li>
+                <li><a href="favor.php"><img src="../../img/icon/favored.png" alt="favor" class="icon"> MyFavor</a>
+                </li>
+                <li><a href="../php/logout.php"><img src="../../img/icon/logout.png" alt="logout" class="icon"> Logout</a>
                 </li>
             </ul>
-        </div>
+        </div>';
+        } //如果没登录，整个改成登录
+        else {
+            echo '<div id="userMenu"><a href="login.php">Login</a>';
+        }
+        ?>
         <br>
     </nav>
     <!--navigation end-->
@@ -46,39 +79,49 @@
         <div class="col-3 p-3 m-0">
             <!--aside begin-->
             <aside class="bd-form">
-                <div id="searcher">
-                    <label class="text-nowrap" for="searchByTitle">搜索图片标题</label>
+                <form id="searcher">
+                    <label class="text-nowrap title" for="searchByTitle">Search by title</label>
                     <form>
-                        <input type="search" name="searchByTitle" id="searchByTitle" class="w-75">
-                        <button type="submit" onclick="alert('搜索功能建设中')" id="searchTitle">搜索</button>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="Title" id="searchByTitle"
+                                   placeholder="Title here" required>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit" id="searchTitle">Search</button>
+                            </div>
+                        </div>
                     </form>
-                </div>
+                </form>
                 <div class="hotSection">
-                    <h3 class="text-nowrap"> 热门主题</h3>
+                    <h3 class="text-nowrap title"> Hottest Content</h3>
                     <ul>
-                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>自然</a></li>
-                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>城市</a></li>
-                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>建筑</a></li>
-                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>人像</a></li>
-                        <li><a class="hotContent" href="browser.php" onclick=alert("检索功能建设中")>动物</a></li>
+                        <?php
+                        $hotContent = getHottestContent(4);
+                        for ($i = 1; $i <= count($hotContent); $i++) {
+                            echo '<li><a href="browser.php?Content=' . $hotContent[$i - 1] . '">' . $hotContent[$i - 1] . '</a></li>';
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div class="hotSection">
-                    <h3 class="text-nowrap">热门国家</h3>
+                    <h3 class="text-nowrap title">Hottest Country</h3>
                     <ul>
-                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>中国</a></li>
-                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>日本</a></li>
-                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>意大利</a></li>
-                        <li><a class="hotCountry" href="browser.php" onclick=alert("检索功能建设中")>美国</a></li>
+                        <?php
+                        $hotCountryCode = getHottestCountryISO(4);
+                        for ($i = 1; $i <= count($hotCountryCode); $i++) {
+                            echo '<li><a href="browser.php?Country=' . $hotCountryCode[$i - 1] . '">' . getCountry($hotCountryCode[$i - 1]) . '</a></li>';
+                        }
+                        ?>
                     </ul>
                 </div>
                 <div class="hotSection">
-                    <h3 class="text-nowrap">热门城市</h3>
+                    <h3 class="text-nowrap title">Hottest City</h3>
                     <ul>
-                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>北京</a></li>
-                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>东京</a></li>
-                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>罗马</a></li>
-                        <li><a class="hotCity" href="browser.php" onclick=alert("检索功能建设中")>华盛顿</a></li>
+                        <?php
+                        $hotCityCode = getHottestCityCode(4);
+                        for ($i = 1; $i <= count($hotCityCode); $i++) {
+                            echo '<li><a href="browser.php?City=' . $hotCityCode[$i - 1] . '">' . getCity($hotCityCode[$i - 1]) . '</a></li>';
+                        }
+                        ?>
                     </ul>
                 </div>
             </aside>
@@ -88,78 +131,122 @@
             <!--browser begin-->
             <div id="content">
                 <form id="filter" name="filter">
-                    <label class="text-nowrap" for="filterContent">筛选主题</label>
+                    <label class="text-nowrap" for="filterContent">Content</label>
                     <select class="filter" id="filterContent" name="filterContent">
-                        <option value="0">请选择主题</option>
-                        <option value="城市">城市</option>
-                        <option value="建筑">建筑</option>
-                        <option value="自然">自然</option>
+                        <option value="0">Choose content</option>
+                        <?php
+                        $hotContent = getHottestContent(0);
+                        for ($i = 1; $i <= count($hotContent); $i++) {
+                            echo '<option value="' . $hotContent[$i - 1] . '">' . $hotContent[$i - 1] . '</option>';
+                        }
+                        ?>
                     </select>
-                    <label class="text-nowrap" for="filterCountry">筛选国家</label>
+                    <label class="text-nowrap" for="filterCountry">Country</label>
                     <select class="filter" id="filterCountry" name="filterCountry" onchange="getCity()">
-                        <option value="0">请选择国家</option>
-                        <option value="中国">中国</option>
-                        <option value="日本">日本</option>
-                        <option value="意大利">意大利</option>
-                        <option value="美国">美国</option>
+                        <option value="0">Choose country</option>
+                        <?php
+                        $hotCountryCode = getHottestCountryISO(0);
+                        for ($i = 1; $i <= count($hotCountryCode); $i++) {
+                            echo '<option value="' . $hotCountryCode[$i - 1] . '">' . getCountry($hotCountryCode[$i - 1]) . '</option>';
+                        }
+                        ?>
                     </select>
-                    <label class="text-nowrap" for="filterCity">筛选城市</label>
+                    <label class="text-nowrap" for="filterCity">City</label>
                     <select class="filter" id="filterCity" name="filterCity">
-                        <option value="0">请选择城市</option>
+                        <option value="0">Choose city</option>
                     </select>
                 </form>
                 <div id="searcherHot">
-                        <?php
-                        require_once('config.php');
+                    <?php
+                    function echoTable()
+                    {//在此完成检索
+                        if ($_SERVER['REQUEST_METHOD'] == 'GET') {//条件检索
+                            if (isset($_GET['Title'])) {
+                                $result = getImgByTitle($_GET['Title']);
+                            } elseif (isset($_GET['Content'])) {
+                                $result = getImgByContent($_GET['Content']);
+                            } elseif (isset($_GET['Country'])) {
+                                $result = getImgByCountry($_GET['Country']);
+                            } elseif (isset($_GET['City'])) {
+                                $result = getImgByCity($_GET['City']);
+                            } else $result = getAllImg();//默认检索
+                        }
 
-                        function echoTable()
-                        {
-                            try {
-                                $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-                                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        //后面为固定的输出和翻页逻辑
+                        $rowNum = $result->rowCount();
 
-                                //还没想好怎么检索
-                                $sql = 'SELECT travelimage.* FROM travelimage';
-                                $result = $pdo->query($sql);
-                                $rowNum = $result->rowCount();
+                        global $pageNum;
+                        $pageNum = ceil($rowNum / 16.0);
 
-                                echo '<table>';
-                                for ($i = 0; $i < 4; $i++) {
-                                    echo '<tr>';
-                                    for ($j = 0; $j < 4; $j++) {
-                                        $row = $result->fetch();
-                                        echoTdImg($row);
-                                    }
-                                    echo '</tr>';
-                                }
-                               // echo '<td><a href="details.php"><img class="tool" src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>';
-                                echo '</table>';
-                                $pdo = null;
-                            } catch (PDOException $e) {
-                                die($e->getMessage());
+                        //翻页
+                        global $page;
+                        for ($i = 1; $i <= ($page - 1) * 16; $i++) $result->fetch();
+
+                        echo '<table>';
+                        for ($i = 0; $i < 4; $i++) {
+                            echo '<tr>';
+                            for ($j = 0; $j < 4; $j++) {
+                                if ($row = $result->fetch()) echoTdImg($row);
+                                else break;
                             }
+                            echo '</tr>';
                         }
+                        // echo '<td><a href="details.php"><img class="tool" src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>';
+                        echo '</table>';
+                        $pdo = null;
+                    }
 
-                        function echoTdImg($img)
-                        {
-                            $imgPath = $img['PATH'];
-                            $imgId = $img['ImageID'];
-                            echo '<td>';
-                            echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/large/' . $imgPath . '" alt="浏览图片" class="squareImg"></a>';
-                            echo '</td>';
-                        }
+                    function echoTdImg($img)
+                    {
+                        $imgPath = $img['PATH'];
+                        $imgId = $img['ImageID'];
+                        echo '<td>';
+                        echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/large/' . $imgPath . '" alt="浏览图片" class="squareImg"></a>';
+                        echo '</td>';
+                    }
 
-                        echoTable();
-                        ?>
-                    <div id="page">
-                        <a href="browser.html">上一页</a>
-                        <strong>1</strong>
-                        <a href="browser.html">2</a>
-                        <a href="browser.html">3</a>
-                        <a href="browser.html">4</a>
-                        <a href="browser.html" id="pageLast">……19302010020</a>
-                        <a href="browser.html">下一页</a>
-                    </div>
+                    echoTable();
+                    ?>
+
+                    <?php
+                    $start = 1;
+                    $end = 1;
+                    $pageCapacity = 5;
+                    //根据当前页数和总页数判断
+                    if ($pageNum <= $pageCapacity) {
+                        $start = 1;
+                        $end = $pageNum;
+                    } elseif ($page <= $pageNum - $pageCapacity + 1) {
+                        $start = $page;
+                        $end = $page + $pageCapacity - 1;
+                    } else {
+                        $start = $pageNum - $pageCapacity + 1;
+                        $end = $pageNum;
+                    }
+
+                    function previousPage($page)
+                    {
+                        if ($page == 1) return 1;
+                        else return $page - 1;
+                    }
+
+                    function nextPage($page, $pageNum)
+                    {
+                        if ($page == $pageNum) return $pageNum;
+                        else return $page + 1;
+                    }
+
+                    echo '<div id="page">';
+                    echo '<a href="browserQuery.php?page=1">First</a>';
+                    echo '<a href="browserQuery.php?page=' . previousPage($page) . '">Previous</a>';
+                    for ($i = $start; $i < $end + 1; $i++) {
+                        if ($i == $page) echo '<strong>' . $page . '</strong>';
+                        else echo '<a href="browserQuery.php?page=' . $i . '">' . $i . '</a>';
+                    }
+                    echo '<a href="browserQuery.php?page=' . nextPage($page, $pageNum) . '">Next</a>';
+                    echo '<a href="browserQuery.php?page=' . $pageNum . '">Last (' . $pageNum . ' in all)</a>';
+                    echo '</div>';
+                    ?>
                 </div>
             </div>
 
@@ -170,7 +257,6 @@
 
 <!--buttons begin-->
 <div class="floatButton">
-    <img id="refresh" onclick="shapeSquare()" src="../../img/icon/refresh.png" alt="refreshButton">
     <a href="#navigation">
         <img id="toTop" src="../../img/icon/toTop.png" alt="toTopButton">
     </a>

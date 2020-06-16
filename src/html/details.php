@@ -19,23 +19,42 @@
 
 </head>
 <body onresize="changeLine()" onload="changeLine()">
+
+<!--url process start-->
+<?php
+session_start();
+?>
+<!--url process end-->
+
 <header>
     <!--navigation begin-->
     <nav>
         <div id="navigation">
-            <a href="home.php">首页</a>
-            <a href="browser.php">浏览页</a>
-            <a href="search.html">搜索页</a>
+            <a href="home.php">Home</a>
+            <a href="browser.php">Browser</a>
+            <a href="search.php">Searcher</a>
         </div>
-        <div id="userMenu"><span>个人中心</span>
+        <?php
+        //如果登陆了，正常展示，最后一个为退出登录
+        if (isset($_SESSION['UID'])) {
+            $UID = $_SESSION['UID'];
+            echo '<div id="userMenu"><span>UserCenter</span>
             <ul>
-                <li><a href="upload.html"><img src="../../img/icon/upload.png" alt="upload" class="icon">上传照片</a></li>
-                <li><a href="mine.html"><img src="../../img/icon/photo.png" alt="upload" class="icon">我的照片</a></li>
-                <li><a href="favor.html"><img src="../../img/icon/favored.png" alt="upload" class="icon">我的收藏</a></li>
-                <li><a href="login.html"><img src="../../img/icon/account.png" alt="upload" class="icon">登入</a>
+                <li><a href="upload.php"><img src="../../img/icon/upload.png" alt="upload" class="icon"> Upload</a>
+                </li>
+                <li><a href="mine.php"><img src="../../img/icon/photo.png" alt="myphoto" class="icon"> MyPhoto</a></li>
+                <li><a href="favor.php"><img src="../../img/icon/favored.png" alt="favor" class="icon"> MyFavor</a>
+                </li>
+                <li><a href="../php/logout.php"><img src="../../img/icon/logout.png" alt="logout" class="icon"> Logout</a>
                 </li>
             </ul>
-        </div>
+        </div>';
+        } //如果没登录，整个改成登录
+        else {
+            $UID = '';
+            echo '<div id="userMenu"><a href="login.php">Login</a>';
+        }
+        ?>
         <br>
     </nav>
     <!--navigation end-->
@@ -43,82 +62,78 @@
 
 <!--details begin-->
 <?php
-require_once('config.php');
-try {
-    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+require_once('../php/config.php');
+require_once('../php/query.php');
+$pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //按图片ID搜索图片
-    $imgId = $_GET['imgId'];
-    $sql = 'SELECT * FROM `travelimage` WHERE ImageID=' . $imgId;
-    $result = $pdo->query($sql);
-    $img = $result->fetch();
-    $pdo = null;
+//按图片ID搜索图片
+$imgId = $_GET['imgId'];
+$img = getImg($imgId);
 
-    $imgTitle = $img['Title'];
-    $imgDescription = $img['Description'];
-    $imgContent = $img['Content'];
-    $imgPath=$img['PATH'];
+//将img打散为需要的信息
+$imgTitle = $img['Title'];
+if ($img['Description'] != null) $imgDescription = $img['Description'];
+else$imgDescription = 'The author said nothing';
+$imgContent = $img['Content'];
+$imgPath = $img['PATH'];
 
-    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $imgCity = $img['CityCode'];
-    if ($imgCity != null) {
-        $sql = 'SELECT * FROM `geocities` WHERE GeoNameID=' . $imgCity;
-        $result = $pdo->query($sql);
-        $geo = $result->fetch();
-        $imgCity = $geo['AsciiName'];
-    } else {
-        $imgCity = 'unknown';
-    }
-    $pdo = null;
+//获取城市
+$imgCity = getCity($img['CityCode']);
 
+//获取国家
+$imgCountry = getCountry($img['Country_RegionCodeISO']);
 
-    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $imgCountry = $img['Country_RegionCodeISO'];
-    if ($imgCountry != null) {
-        $sql = 'SELECT * FROM `geocountries_regions` WHERE ISO="' . $imgCountry . '"';
-        $result = $pdo->query($sql);
-        $geo = $result->fetch();
-        $imgCountry = $geo['Country_RegionName'];
-    } else {
-        $imgCountry = 'unknown';
-    }
-    $pdo = null;
-
-
-} catch (PDOException $e) {
-    die($e->getMessage());
-}
+//由UID获取上传者
+$imgAuthor = getUserName($img['UID']);
 ?>
 <div class="container bd-form pt-1 pb-1 repository-color">
     <div class="row my-0 justify-content-center">
-        <img class="w-100" src="../../img/large/<?php echo $imgPath?>" alt="The Photo">
+        <img class="w-100" src="../../img/large/<?php echo $imgPath ?>" alt="The Photo">
     </div>
     <div class="row my-2 justify-content-center">
         <p class="text-mid m-0"><span id="title" class="info-img"><?php echo $imgTitle; ?></span> by <span id="Author"
-                                                                                                           class="info-img">Author</span>
+                                                                                                           class="info-img"><?php echo $imgAuthor ?></span>
         </p>
     </div>
     <div class="row my-2 justify-content-center">
-        <button type="button" class="btn btn-default btn-lg" onclick="alert('收藏功能建设中');">
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> 收藏
-        </button>
+        <?php
+        //获取收藏数
+        $favorNum = getFavorNum($imgId);
+        if ($UID !== '') {
+            $isFavored = isFavored($UID, $imgId);
+            echo '<button type="button" class="btn btn-default btn-lg" id="button" name="' . $UID . '&' . $imgId . '">';
+            echo '<span class="mx-4" id="favorNum">FavorNumber：' . $favorNum . '</span>';
+            if ($isFavored) {
+                echo '<span class="glyphicon glyphicon-star" aria-hidden="true" id="favor">Favored</span>';
+            } else {
+                echo '<span class="glyphicon glyphicon-star-empty" aria-hidden="true" id="favor">Unfavored</span>';
+            }
+            echo '</button>';
+        } else {
+            echo '<span class="mx-4" id="favorNum">FavorNumber：' . $favorNum . ' | Login to unlock favor</span>';
+        }
+        ?>
     </div>
     <div class="row my-2 justify-content-center">
-        <div class="col-3 justify-content-center text-big">主题：<span class="info-img"><?php echo $imgContent; ?></span>
+        <div class="col-3 justify-content-center text-big">Content：<span
+                    class="info-img"><?php echo $imgContent; ?></span>
         </div>
-        <div class="col-3 justify-content-center text-big">国家：<span class="info-img"><?php echo $imgCountry; ?></span>
+        <div class="col-3 justify-content-center text-big">Country：<span
+                    class="info-img"><?php echo $imgCountry; ?></span>
         </div>
-        <div class="col-3 justify-content-center text-big">城市：<span class="info-img"><?php echo $imgCity; ?></span>
+        <div class="col-3 justify-content-center text-big">City：<span class="info-img"><?php echo $imgCity; ?></span>
         </div>
     </div>
     <div class="row my-2 justify-content-center">
-        <p class="title text-mid">图片描述：</p>
+        <p class="title text-mid">Description：</p>
         <div class="col-10 justify-content-center text-mid content mt-2">
             <?php
-            echo $imgDescription;
+            if ($imgDescription != null) {
+                echo $imgDescription;
+            } else {
+                echo 'The author said nothing';
+            }
             ?>
         </div>
     </div>
@@ -142,5 +157,6 @@ try {
 <!--js-->
 <script src="../js/textEllipsis.js"></script>
 <script src="../js/imgSquare.js"></script>
+<script src="../js/favor.js"></script>
 </body>
 </html>

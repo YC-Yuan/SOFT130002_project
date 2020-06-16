@@ -55,6 +55,10 @@ nav a, #userMenu span {
     height: 58px;
 }
 
+#userMenu a{
+    text-decoration: none;
+}
+
 #userMenu ul {
     margin-top: 8px;
     right: 30px;

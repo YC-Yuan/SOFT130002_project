@@ -39,5 +39,6 @@ function changeLine() {
         content[i].style.webkitLineClamp = line.toString();
         //console.log("final line number is " + line);
         content[i].style.margin = "0px";
+        content[i].style.paddingBottom="4px";
     }
 }
