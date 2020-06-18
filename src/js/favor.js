@@ -15,6 +15,7 @@ button.addEventListener("click", function () {
             console.log(request.responseText);
             info = request.responseText;
             infos = info.split("&");//infos[0]为成功信息，infos[1]为现有收藏数
+            console.log(infos[0]);
             if (infos[0] === "true") {//成功，更改收藏图标和信息
                 if (isFavored) {//原本收藏，改为未收藏
                     favor.innerText = "Unfavored";
@@ -28,6 +29,7 @@ button.addEventListener("click", function () {
 
         }
     };
+    console.log("../php/changeFavor.php?change=" + isFavored + "&UID=" + UID + "&imgId=" + imgId);
     request.open("GET", "../php/changeFavor.php?change=" + isFavored + "&UID=" + UID + "&imgId=" + imgId, true);
     request.send();
 }, false);

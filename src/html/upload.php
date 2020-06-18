@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>三鱼一茶-上传</title>
+    <title>3Fish1Tea-Upload</title>
 
     <!--bootstrap4-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,6 +23,12 @@
 <!--url process start-->
 <?php
 session_start();
+require_once('../php/query.php');
+if (isset($_GET['imgId'])) {
+    $img = getImg($_GET['imgId']);
+    $imgId = $_GET['imgId'];
+} else $imgId = "";
+$UID = $_SESSION['UID'];
 ?>
 <!--url process end-->
 
@@ -36,9 +42,7 @@ session_start();
             <a href="search.php">Searcher</a>
         </div>
         <?php
-        //如果登陆了，正常展示，最后一个为退出登录
-        if (isset($_SESSION['UID'])){
-            echo '<div id="userMenu"><span>UserCenter</span>
+        echo '<div id="userMenu"><span>UserCenter</span>
             <ul>
                 <li><a class="currentMenu" href="upload.php"><img src="../../img/icon/upload.png" alt="upload" class="icon"> Upload</a>
                 </li>
@@ -49,10 +53,6 @@ session_start();
                 </li>
             </ul>
         </div>';
-        } //如果没登录，整个改成登录
-        else {
-            echo '<div id="userMenu"><a href="login.php">Login</a>';
-        }
         ?>
         <br>
     </nav>
@@ -61,59 +61,128 @@ session_start();
 
 
 <!--upload begin-->
-<div class="container bd-form p-3 repository-color justify-content-center mt-3">
-    <img class="w-100 mb-3" src="#" alt="The Photo" id="uploadedImg">
-    <div class="row justify-content-center">
-        <p id="uploadStatus" class="info-img text-big">未选择图片</p>
-    </div>
-
-    <div class="row p-0 mx-0 mb-3 justify-content-center">
-        <input type="file" class="btn btn-secondary mx-auto" id="upload">
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="imgTitle">图片标题</span>
+<form enctype="multipart/form-data" action="../php/upload.php"
+      class="container bd-form p-3 repository-color justify-content-center mt-3" method="post">
+    <?php
+    //如有id，输出图片,如无id，输出待上传
+    if (isset($_GET['imgId'])) echo '<img class="w-100 mb-3" src="../../img/travel/' . $img['PATH'] . '" alt="The Photo" id="uploadedImg">';
+    else echo '<img class="w-100 mb-3" src="" alt="The Photo" id="uploadedImg" style="display: none">';
+    ?>
+    <input type="text" style="display: none" name="imgId" value="<?php echo $imgId ?>">
+    <div class="row mx-0 px-0">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend p-0">
+                <span class="input-group-text w-100">Photo</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="file" name="file">
+                <label class="custom-file-label" for="file">
+                    <?php
+                    if (isset($_GET['imgId'])) echo 'Change the photo';
+                    else echo 'Choose a photo';
+                    ?>
+                </label>
+            </div>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-default">
     </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="imgContent">图片主题</span>
+    <div class="row mx-0 px-0">
+        <div class="input-group  mb-3">
+            <div class="input-group-prepend  p-0">
+                <span class="input-group-text w-100" id="imgTitle">Title</span>
+            </div>
+            <input type="text" class="form-control  p-0" placeholder="Title here" name="title" id="title" required
+                <?php
+                if (isset($_GET['imgId'])) echo 'value="' . $img['Title'] . '"';
+                ?>>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-default">
     </div>
+    <div class="row mx-0 px-0">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend  p-0  p-0">
+                <span class="input-group-text w-100" id="imgContent">Content</span>
+            </div>
+            <?php
+            function getSelectedContent($index)
+            {
+                switch ($index) {
+                    case 1:
+                        $result = 'scenery';
+                        break;
+                    case 2:
+                        $result = 'city';
+                        break;
+                    case 3:
+                        $result = 'people';
+                        break;
+                    case 4:
+                        $result = 'animal';
+                        break;
+                    case 5:
+                        $result = 'building';
+                        break;
+                    case 6:
+                        $result = 'wonder';
+                        break;
+                    case 7:
+                        $result = 'other';
+                        break;
+                    default:
+                        $result = '';
+                }
+                return $result;
+            }
 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="imgCountry">拍摄国家</span>
+            ?>
+            <select class="form-control  p-0" name="content" id="content">
+                <?php
+                for ($i = 0; $i < 8; $i++) {
+                    $contentText = getSelectedContent($i);
+                    echo '<option ';
+                    if (isset($img)) if ($img['Content'] == $contentText) echo 'selected ';
+                    echo 'value="' . $contentText . '">';
+                    if ($i == 0) $contentText = 'Choose content';
+                    echo $contentText . '</option>';
+                }
+                ?>
+            </select>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-default">
     </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="imgCity">拍摄城市</span>
+    <div class="row mx-0 px-0">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend p-0">
+                <span class="input-group-text w-100" id="imgCountry">Country</span>
+            </div>
+            <input type="text" class="form-control  p-0" placeholder="Country here" name="country" id="country"
+            <?php
+            if (isset($_GET['imgId'])) echo ' value="' . getCountry($img['Country_RegionCodeISO']) . '"';
+            ?>">
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-default">
     </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text">图片描述</span>
+    <div class="row mx-0 px-0">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend p-0">
+                <span class="input-group-text w-100" id="imgCity">City</span>
+            </div>
+            <input type="text" class="form-control  p-0" placeholder="City here" name="city" id="city"
+            <?php
+            if (isset($_GET['imgId'])) echo ' value="' . getCity($img['CityCode']) . '"';
+            ?>">
         </div>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+    <div class="row mx-0 px-0">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend  p-0">
+                <span class="input-group-text w-100">Description</span>
+            </div>
+            <textarea class="form-control  p-0" rows="6" placeholder="Description here" id="description"
+                      name="description"><?php if (isset($_GET['imgId'])) echo $img['Description']; ?></textarea>
+        </div>
     </div>
 
     <div class="row p-0 m-0 justify-content-center">
-        <button type="button" class="btn btn-secondary mx-auto" id="submit">提交</button>
+        <button type="submit" class="btn btn-secondary mx-auto" id="submit">Upload</button>
     </div>
-</div>
+</form>
 <!--upload end-->
 
 <!--footer begin-->

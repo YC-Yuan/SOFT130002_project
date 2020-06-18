@@ -83,7 +83,7 @@ require_once('../php/changePhoto.php');
                     $imgDescription = 'The author said nothing.';
                 }
                 echo '<div class="repository-box p-2">';
-                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/large/' . $img['PATH'] . '" alt="myFavored"></a>';
+                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/travel/' . $img['PATH'] . '" alt="myFavored"></a>';
                 echo '<div class="repository-content container-ellipsis">';
                 echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="title my-1">' . $img['Title'] . '</a>';
                 echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="content content-ellipsis my-1">' . $imgDescription . '</a>';

@@ -88,15 +88,15 @@ $imgCountry = getCountry($img['Country_RegionCodeISO']);
 $imgAuthor = getUserName($img['UID']);
 ?>
 <div class="container bd-form pt-1 pb-1 repository-color">
-    <div class="row my-0 justify-content-center">
-        <img class="w-100" src="../../img/large/<?php echo $imgPath ?>" alt="The Photo">
+    <div class="row my-1 mx-1 justify-content-center">
+        <img class="w-100" src="../../img/travel/<?php echo $imgPath ?>" alt="The Photo">
     </div>
-    <div class="row my-2 justify-content-center">
+    <div class="row my-1 mx-1  justify-content-center">
         <p class="text-mid m-0"><span id="title" class="info-img"><?php echo $imgTitle; ?></span> by <span id="Author"
                                                                                                            class="info-img"><?php echo $imgAuthor ?></span>
         </p>
     </div>
-    <div class="row my-2 justify-content-center">
+    <div class="row my-1 mx-1 justify-content-center">
         <?php
         //获取收藏数
         $favorNum = getFavorNum($imgId);
@@ -111,21 +111,21 @@ $imgAuthor = getUserName($img['UID']);
             }
             echo '</button>';
         } else {
-            echo '<span class="mx-4" id="favorNum">FavorNumber：' . $favorNum . ' | Login to unlock favor</span>';
+            echo '<span class="mx-4" id="favorNum">FavorNumber：' . $favorNum . ' | <a href="login.php" class="info">Login</a> to unlock favor</span>';
         }
         ?>
     </div>
-    <div class="row my-2 justify-content-center">
-        <div class="col-3 justify-content-center text-big">Content：<span
+    <div class="row my-1 mx-1 justify-content-center">
+        <div class="col-4 justify-content-center text-big">Content：<span
                     class="info-img"><?php echo $imgContent; ?></span>
         </div>
-        <div class="col-3 justify-content-center text-big">Country：<span
+        <div class="col-4 justify-content-center text-big">Country：<span
                     class="info-img"><?php echo $imgCountry; ?></span>
         </div>
-        <div class="col-3 justify-content-center text-big">City：<span class="info-img"><?php echo $imgCity; ?></span>
+        <div class="col-4 justify-content-center text-big">City：<span class="info-img"><?php echo $imgCity; ?></span>
         </div>
     </div>
-    <div class="row my-2 justify-content-center">
+    <div class="row my-1 mx-1 justify-content-center">
         <p class="title text-mid">Description：</p>
         <div class="col-10 justify-content-center text-mid content mt-2">
             <?php

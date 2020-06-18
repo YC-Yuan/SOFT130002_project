@@ -8,6 +8,13 @@ function getAllImg()
     return pdo($sql);
 }
 
+//拿到最大的id
+function getMaxId()
+{
+    $sql = 'SELECT `ImageID` FROM `travelimage` ORDER BY `ImageID` DESC LIMIT 1';
+    return pdo($sql)->fetch()['ImageID'];
+}
+
 //ID搜各种
 function getImg($imgId)
 {
@@ -61,10 +68,10 @@ function getCity($cityCode)
 function getCityCode($city)
 {
     if ($city != null) {
-        $sql = 'SELECT * FROM `geocities` WHERE AsciiName=' . $city;
+        $sql = 'SELECT * FROM `geocities` WHERE AsciiName="' . $city . '"';
         $result = pdo($sql);
         $geo = $result->fetch();
-        $cityCode = $geo['AsciiName'];
+        $cityCode = $geo['GeoNameID'];
     } else {
         $cityCode = 'unknown';
     }
@@ -102,4 +109,10 @@ function isFavored($UID, $imageId)
     if ($result->rowCount() > 0) {
         return true;
     } else return false;
+}
+
+function getUID($userName)
+{
+    $sql = 'SELECT `UID` FROM `traveluser` WHERE UserName="' . $userName.'"';
+    return pdo($sql)->fetch()['UID'];
 }

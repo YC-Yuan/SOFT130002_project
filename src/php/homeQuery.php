@@ -20,9 +20,9 @@ function getHot()
     return pdo($sql);
 }
 
-function getHotRandom()
+function getHotRandom($limit)
 {
-    $sql = 'SELECT travelimage.* FROM travelimage ORDER BY rand() LIMIT 6';
+    $sql = 'SELECT travelimage.* FROM travelimage ORDER BY rand() LIMIT '.$limit;
     return pdo($sql);
 }
 

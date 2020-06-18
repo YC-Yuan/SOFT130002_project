@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <title>三鱼一茶-浏览页</title>
@@ -80,7 +80,7 @@ if (isset($_GET['keyword'])) {
             <!--aside begin-->
             <aside class="bd-form">
                 <form id="searcher">
-                    <label class="text-nowrap title" for="searchByTitle">Search by title</label>
+                    <label class="text-nowrap content" for="searchByTitle">Search by title</label>
                     <form>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="Title" id="searchByTitle"
@@ -92,7 +92,7 @@ if (isset($_GET['keyword'])) {
                     </form>
                 </form>
                 <div class="hotSection">
-                    <h3 class="text-nowrap title"> Hottest Content</h3>
+                    <h3 class="text-nowrap content"> Hottest Content</h3>
                     <ul>
                         <?php
                         $hotContent = getHottestContent(4);
@@ -103,7 +103,7 @@ if (isset($_GET['keyword'])) {
                     </ul>
                 </div>
                 <div class="hotSection">
-                    <h3 class="text-nowrap title">Hottest Country</h3>
+                    <h3 class="text-nowrap content">Hottest Country</h3>
                     <ul>
                         <?php
                         $hotCountryCode = getHottestCountryISO(4);
@@ -114,7 +114,7 @@ if (isset($_GET['keyword'])) {
                     </ul>
                 </div>
                 <div class="hotSection">
-                    <h3 class="text-nowrap title">Hottest City</h3>
+                    <h3 class="text-nowrap content">Hottest City</h3>
                     <ul>
                         <?php
                         $hotCityCode = getHottestCityCode(4);
@@ -130,36 +130,44 @@ if (isset($_GET['keyword'])) {
         <div class="col-9 p-3 m-0">
             <!--browser begin-->
             <div id="content">
-                <form id="filter" name="filter">
-                    <label class="text-nowrap" for="filterContent">Content</label>
-                    <select class="filter" id="filterContent" name="filterContent">
-                        <option value="0">Choose content</option>
-                        <?php
-                        $hotContent = getHottestContent(0);
-                        for ($i = 1; $i <= count($hotContent); $i++) {
-                            echo '<option value="' . $hotContent[$i - 1] . '">' . $hotContent[$i - 1] . '</option>';
-                        }
-                        ?>
-                    </select>
-                    <label class="text-nowrap" for="filterCountry">Country</label>
-                    <select class="filter" id="filterCountry" name="filterCountry" onchange="getCity()">
-                        <option value="0">Choose country</option>
-                        <?php
-                        $hotCountryCode = getHottestCountryISO(0);
-                        for ($i = 1; $i <= count($hotCountryCode); $i++) {
-                            echo '<option value="' . $hotCountryCode[$i - 1] . '">' . getCountry($hotCountryCode[$i - 1]) . '</option>';
-                        }
-                        ?>
-                    </select>
-                    <label class="text-nowrap" for="filterCity">City</label>
-                    <select class="filter" id="filterCity" name="filterCity">
-                        <option value="0">Choose city</option>
-                    </select>
-                </form>
+                <div id="filter" class="container-fluid">
+                    <div class="row justify-content-between">
+                        <div class="form-group col-3">
+                            <select class="form-control" id="selectContent">
+                                <option value="0">Choose content</option>
+                                <?php
+                                $hotContent = getHottestContent(0);
+                                for ($i = 1; $i <= count($hotContent); $i++) {
+                                    echo '<option value="' . $hotContent[$i - 1] . '">' . $hotContent[$i - 1] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-3">
+                            <select class="form-control" id="selectCountry">
+                                <option value="0">Choose country</option>
+                                <?php
+                                $hotCountryCode = getHottestCountryISO(0);
+                                for ($i = 1; $i <= count($hotCountryCode); $i++) {
+                                    echo '<option value="' . $hotCountryCode[$i - 1] . '">' . getCountry($hotCountryCode[$i - 1]) . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-3">
+                            <select class="form-control" id="selectCity">
+                                <option value="0">Choose city</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-outline-secondary" id="filterButton">Filter</button>
+                        </div>
+                    </div>
+                </div>
                 <div id="searcherHot">
                     <?php
-                    function echoTable()
-                    {//在此完成检索
+                    function echoTable()//在此完成检索
+                    {
                         if ($_SERVER['REQUEST_METHOD'] == 'GET') {//条件检索
                             if (isset($_GET['Title'])) {
                                 $result = getImgByTitle($_GET['Title']);
@@ -169,6 +177,14 @@ if (isset($_GET['keyword'])) {
                                 $result = getImgByCountry($_GET['Country']);
                             } elseif (isset($_GET['City'])) {
                                 $result = getImgByCity($_GET['City']);
+                            } elseif (isset($_GET['content']) | isset($_GET['country']) | isset($_GET['city'])) {
+                                if (isset($_GET['content'])) $content = $_GET['content'];
+                                else $content = null;
+                                if (isset($_GET['country'])) $country = $_GET['country'];
+                                else $country = null;
+                                if (isset($_GET['city'])) $city = $_GET['city'];
+                                else $city = null;
+                                $result = getImgByAll($content, $country, $city);
                             } else $result = getAllImg();//默认检索
                         }
 
@@ -187,13 +203,12 @@ if (isset($_GET['keyword'])) {
                             echo '<tr>';
                             for ($j = 0; $j < 4; $j++) {
                                 if ($row = $result->fetch()) echoTdImg($row);
-                                else break;
+                                else echo '<td></td>';
                             }
                             echo '</tr>';
                         }
                         // echo '<td><a href="details.php"><img class="tool" src="../../img/icon/3Fish1Tea.png" alt="布局用工具图"></a></td>';
                         echo '</table>';
-                        $pdo = null;
                     }
 
                     function echoTdImg($img)
@@ -201,7 +216,7 @@ if (isset($_GET['keyword'])) {
                         $imgPath = $img['PATH'];
                         $imgId = $img['ImageID'];
                         echo '<td>';
-                        echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/large/' . $imgPath . '" alt="浏览图片" class="squareImg"></a>';
+                        echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/travel/' . $imgPath . '" alt="浏览图片" class="squareImg"></a>';
                         echo '</td>';
                     }
 
@@ -237,14 +252,14 @@ if (isset($_GET['keyword'])) {
                     }
 
                     echo '<div id="page">';
-                    echo '<a href="browserQuery.php?page=1">First</a>';
-                    echo '<a href="browserQuery.php?page=' . previousPage($page) . '">Previous</a>';
+                    echo '<a href="browser.php?page=1">First</a>';
+                    echo '<a href="browser.php?page=' . previousPage($page) . '">Previous</a>';
                     for ($i = $start; $i < $end + 1; $i++) {
                         if ($i == $page) echo '<strong>' . $page . '</strong>';
-                        else echo '<a href="browserQuery.php?page=' . $i . '">' . $i . '</a>';
+                        else echo '<a href="browser.php?page=' . $i . '">' . $i . '</a>';
                     }
-                    echo '<a href="browserQuery.php?page=' . nextPage($page, $pageNum) . '">Next</a>';
-                    echo '<a href="browserQuery.php?page=' . $pageNum . '">Last (' . $pageNum . ' in all)</a>';
+                    echo '<a href="browser.php?page=' . nextPage($page, $pageNum) . '">Next</a>';
+                    echo '<a href="browser.php?page=' . $pageNum . '">Last (' . $pageNum . ' in all)</a>';
                     echo '</div>';
                     ?>
                 </div>

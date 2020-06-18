@@ -64,16 +64,35 @@ require_once('../php/homeQuery.php');
     <!--navigation end-->
 
     <!--homeCarousel begin-->
-    <div id="homeCarousel" class="carousel slide carousel-fade w-75 m-auto" data-ride="carousel">
+    <div id="homeCarousel" class="carousel slide carousel-fade m-auto w-50" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="../../img/homeCarousel/1.jpg" alt="First slide">
+                <?php
+                $carousel = getHotRandom(3);
+                $img = $carousel->fetch();
+                echo '<a href="details.php?imgId=' . $img['ImageID'] . '">';
+                ?>
+                <img class="m-auto d-block" src="../../img/travel/<?php
+                echo $img['PATH'];
+                ?>" alt="First slide"><?php echo '</a>'; ?>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../../img/homeCarousel/2.jpg" alt="Second slide">
+                <?php
+                $img = $carousel->fetch();
+                echo '<a href="details.php?imgId=' . $img['ImageID'] . '">';
+                ?>
+                <img class="m-auto d-block" src="../../img/travel/<?php
+                echo $img['PATH'];
+                ?>" alt="Second slide"><?php echo '</a>'; ?>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="../../img/homeCarousel/3.jpg" alt="Third slide">
+                <?php
+                $img = $carousel->fetch();
+                echo '<a href="details.php?imgId=' . $img['ImageID'] . '">';
+                ?>
+                <img class="m-auto d-block" src="../../img/travel/<?php
+                echo $img['PATH'];
+                ?>" alt="Third slide"><?php echo '</a>'; ?>
             </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -92,7 +111,7 @@ require_once('../php/homeQuery.php');
 <?php
 function echoHotDiv($random)
 {
-    if ($random) $result = getHotRandom();
+    if ($random) $result = getHotRandom(6);
     else $result = getHot();
 
     for ($i = 1; $i <= 3; $i++) {
@@ -116,7 +135,7 @@ function echoHotImg($img)
     $imgDescription = $img['Description'];
     $imgId = $img['ImageID'];
     echo '<div class="homeHotImg bd-content">';
-    echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/large/' . $imgPath . '" alt="首页热门图1"></a>';
+    echo '<a href="details.php?imgId=' . $imgId . '"><img src="../../img/travel/' . $imgPath . '" alt="首页热门图1"></a>';
     echo '<div class="hotDiv container-ellipsis">';
     echo '<a href="details.php" class="title">' . $imgTitle . '</a>';
     echo '<a href="details.php" class="hotImgContent content content-ellipsis">';

@@ -49,9 +49,8 @@ function getImgByTitle($title)
 
     $sql = 'SELECT * FROM travelimage WHERE `Title` LIKE  "%' . $keys[0] . '%"';
     for ($i = 2; $i <= $keyNum; $i++) {
-        $sql = $sql . ' AND `Title` LIKE "%' . $keys[$i - 1] . '%"';
+        $sql = $sql . ' OR `Title` LIKE "%' . $keys[$i - 1] . '%"';
     }
-
     return pdo($sql);
 }
 
@@ -70,5 +69,46 @@ function getImgByCountry($countryCode)
 function getImgByCity($cityCode)
 {
     $sql = 'SELECT * FROM travelimage WHERE `CityCode` = "' . $cityCode . '"';
+    return pdo($sql);
+}
+
+//多级筛选
+function getImgByAll($content, $countryCode, $cityCode)
+{
+    $sql = 'SELECT * FROM travelimage WHERE ';
+    $num = 0;
+    if ($content != null) {
+        $sql = $sql . '`Content` = "' . $content . '"';
+        $num = 1;
+    }
+    if ($countryCode != null) {
+        if ($num == 1) {
+            $sql = $sql . ' AND `Country_RegionCodeISO` = "' . $countryCode . '"';
+        } else {
+            $sql = $sql . '`Country_RegionCOdeISO`= "' . $countryCode . '"';
+            $num = 1;
+        }
+    }
+    if ($cityCode != null) {
+        if ($num == 1) {
+            $sql = $sql . ' AND `CityCode` = "' . $cityCode . '"';
+        } else {
+            $sql = $sql . '`CityCode` = "' . $cityCode . '"';
+        }
+    }
+    return pdo($sql);
+}
+
+//描述查询
+function getImgByDescription($description)
+{
+    $keys = explode(" ", $description);
+    $keyNum = count($keys);
+
+    $sql = 'SELECT * FROM travelimage WHERE `Description` LIKE  "%' . $keys[0] . '%"';
+    for ($i = 2; $i <= $keyNum; $i++) {
+        $sql = $sql . ' OR `Description` LIKE "%' . $keys[$i - 1] . '%"';
+    }
+
     return pdo($sql);
 }

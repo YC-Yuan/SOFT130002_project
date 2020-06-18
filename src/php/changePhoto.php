@@ -5,6 +5,8 @@ require_once('pdo.php');
 function deletePhoto($UID, $imgId)
 {
     $sql = 'DELETE FROM travelimage WHERE `UID` = ' . $UID . ' and `ImageID` = ' . $imgId;
+    $sql2 = 'DELETE FROM travelimagefavor WHERE `ImageID` = ' . $imgId;
+    pdo($sql2);
     return pdo($sql);
 }
 

@@ -33,25 +33,29 @@ function validLogin()
 {
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 
-    $sql = "SELECT * FROM traveluser WHERE UserName=:name and Pass=:pass";
+    $sql = "SELECT * FROM traveluser WHERE UserName=:name";
 
     $statement = $pdo->prepare($sql);
     $statement->bindValue(':name', $_POST['name']);
-    $statement->bindValue(':pass', $_POST['pass']);
     $statement->execute();
 
-    if ($user = $statement->fetch()) {
-        global $UID;
-        $UID = $user['UID'];
-        return true;
-    }
+    $user = $statement->fetch();
+    $passSalt = $user['Pass'];
+    $salt = $user['Salt'];
+    $password = $_POST['pass'];
+
+    if ($passSalt == sha1($password . $salt)) {
+    global $UID;
+    $UID = $user['UID'];
+    return true;
+}
     return false;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//提交登录
     if (validLogin()) {//成功登陆
         $_SESSION['UID'] = $UID;
-        header("Location:./homeQuery.php");
+        header("Location:./home.php");
     } else {
         $login = false;
     }

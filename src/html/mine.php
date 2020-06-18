@@ -82,13 +82,13 @@ require_once('../php/changePhoto.php');
                     Click the "Modify" button to write one.';
                 }
                 echo '<div class="repository-box p-2">';
-                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/large/' . $img['PATH'] . '" alt="我的照片1"></a>';
+                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/travel/' . $img['PATH'] . '" alt="我的照片1"></a>';
                 echo '<div class="repository-content container-ellipsis">';
                 echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="title my-1">' . $img['Title'] . '</a>';
                 echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="content content-ellipsis my-1">' . $imgDescription . '</a>';
                 echo '<div class="btn-toolbar justify-content-end">';
                 echo '<div class="btn-group my-1" role="group" aria-label="Basic example">';
-                echo '<button type="button" class="btn btn-secondary">Modify</button>';
+                echo '<a href="upload.php?imgId=' . $img['ImageID'] . '"><button type="button" class="btn btn-secondary">Modify</button></a>';
                 echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
  Delete
 </button>

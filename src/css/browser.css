@@ -32,17 +32,6 @@ li {
 }
 
 /*右半部分筛选+浏览*/
-#content {
-    border: 2px;
-    -webkit-margin-collapse: collapse;;
-    text-align: left;
-}
-
-#content label {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
 select {
     font-size: 18px;
     margin-right: 3%;

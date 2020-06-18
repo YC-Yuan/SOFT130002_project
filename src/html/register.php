@@ -23,23 +23,29 @@
 <!--url process start-->
 <?php
 session_start();
-require_once("../php/config.php");
+require_once("../php/pdo.php");
+require_once("../php/salt.php");
+require_once("../php/query.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
+    $info = encrypt($pass);
+    $infos = explode(" ", $info);
+    $pass = $infos[0];
+    $salt = $infos[1];
 
-    $sql = "
-INSERT INTO `traveluser` (`Email`, `UserName`, `Pass`)
-VALUES ('" . $email . "', '" . $name . "', '" . $pass . "')";
+    $sql = '
+INSERT INTO `traveluser` (`Email`, `UserName`, `Pass`,`Salt`)
+VALUES ("' . $email . '", "' . $name . '", "' . $pass . '", "' . $salt . '")';
 
-    if ($result = $pdo->query($sql)) {
-        $UID = $pdo->lastInsertId();//拿到刚刚插入时的UID
+
+    if ($result = pdo($sql)) {
+        $UID = getUID($name);//拿到刚刚插入时的UID
         $_SESSION['UID'] = $UID;
-        header("Location:./homeQuery.php");
+        header("Location:./home.php");
     }
 }
 ?>
@@ -89,7 +95,7 @@ VALUES ('" . $email . "', '" . $name . "', '" . $pass . "')";
 <script src="../bootstrap4/js/bootstrap.js"></script>
 
 <!--js-->
-<script src="../js/validity.js"></script>
+<script src="../js/registerValidity.js"></script>
 
 </body>
 </html>

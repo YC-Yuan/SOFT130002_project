@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 require_once("pdo.php");
+require_once("query.php");
 $change = $_GET['change'];
 $UID = $_GET['UID'];
 $imgId = $_GET['imgId'];

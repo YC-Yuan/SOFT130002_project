@@ -1,13 +1,13 @@
 /*通用样式*/
 .bd-content {
     border: 2px solid #ccad81;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 0 0 8px #444444;
 }
 
 .bd-form {
     border: 4px dashed #ccad81;
-    padding: 1.2em;
+    padding: 4px;
     margin: auto;
     width: max-content;
 }
