@@ -25,6 +25,13 @@
 session_start();
 require_once('../php/query.php');
 require_once('../php/changePhoto.php');
+
+$pageNum = 0;
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
 ?>
 <!--url process end-->
 
@@ -76,28 +83,73 @@ require_once('../php/changePhoto.php');
         if ($myNum == 0) {
             echo '<div class="repository-box p-2"><p class="text-big info-img text-center">No photo favored yet~<br/>Click photos you like and then favor them!</p></div>';
         } else {
-            for ($i = 1; $i <= $myNum; $i++) {
-                $img = $myFavor->fetch();
-                $imgDescription = $img['Description'];
-                if ($imgDescription == '') {
-                    $imgDescription = 'The author said nothing.';
+            global $pageNum;
+            $pageNum = ceil($myNum / 6.0);
+            //翻页
+            global $page;
+            for ($i = 1; $i <= ($page - 1) * 6; $i++) $myFavor->fetch();
+
+            for ($k = 1; $k <= 6; $k++) {
+                if ($img = $myFavor->fetch()) {
+                    $imgDescription = $img['Description'];
+                    if ($imgDescription == '') {
+                        $imgDescription = 'The author said nothing.';
+                    }
+                    echo '<div class="repository-box p-2">';
+                    echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/travel/' . $img['PATH'] . '" alt="myFavored"></a>';
+                    echo '<div class="repository-content container-ellipsis">';
+                    echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="title my-1">' . $img['Title'] . '</a>';
+                    echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="content content-ellipsis my-1">' . $imgDescription . '</a>';
+                    echo '<div class="btn-toolbar justify-content-end">';
+                    echo '<div class="btn-group my-1" role="group" aria-label="Basic example">';
+                    echo '<a href="favor.php?delete=' . $img['ImageID'] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '';
                 }
-                echo '<div class="repository-box p-2">';
-                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="repository-img"><img src="../../img/travel/' . $img['PATH'] . '" alt="myFavored"></a>';
-                echo '<div class="repository-content container-ellipsis">';
-                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="title my-1">' . $img['Title'] . '</a>';
-                echo '<a href="details.php?imgId=' . $img['ImageID'] . '" class="content content-ellipsis my-1">' . $imgDescription . '</a>';
-                echo '<div class="btn-toolbar justify-content-end">';
-                echo '<div class="btn-group my-1" role="group" aria-label="Basic example">';
-                echo '<a href="favor.php?delete=' . $img['ImageID'] . '"><button type="button" class="btn btn-danger">Delete</button></a>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '';
             }
         }
     }
+    //页码输出
+    $start = 1;
+    $end = 1;
+    $pageCapacity = 5;
+    //根据当前页数和总页数判断
+    if ($pageNum <= $pageCapacity) {
+        $start = 1;
+        $end = $pageNum;
+    } elseif ($page <= $pageNum - $pageCapacity + 1) {
+        $start = $page;
+        $end = $page + $pageCapacity - 1;
+    } else {
+        $start = $pageNum - $pageCapacity + 1;
+        $end = $pageNum;
+    }
+
+    function previousPage($page)
+    {
+        if ($page == 1) return 1;
+        else return $page - 1;
+    }
+
+    function nextPage($page, $pageNum)
+    {
+        if ($page == $pageNum) return $pageNum;
+        else return $page + 1;
+    }
+
+    echo '<div id="page">';
+    echo '<a href="favor.php?page=1">First</a>';
+    echo '<a href="favor.php?page=' . previousPage($page) . '">Previous</a>';
+    for ($i = $start; $i < $end + 1; $i++) {
+        if ($i == $page) echo '<strong>' . $page . '</strong>';
+        else echo '<a href="favor.php?page=' . $i . '">' . $i . '</a>';
+    }
+    echo '<a href="favor.php?page=' . nextPage($page, $pageNum) . '">Next</a>';
+    echo '<a href="favor.php?page=' . $pageNum . '">Last (' . $pageNum . ' in all)</a>';
+    echo '</div>';
     ?>
 </div>
 

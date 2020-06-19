@@ -24,9 +24,9 @@
 <?php
 session_start();
 require_once('../php/query.php');
-if (isset($_GET['imgId'])) {
-    $img = getImg($_GET['imgId']);
-    $imgId = $_GET['imgId'];
+if (isset($_POST['imgId'])) {
+    $img = getImg($_POST['imgId']);
+    $imgId = $_POST['imgId'];
 } else $imgId = "";
 $UID = $_SESSION['UID'];
 ?>
@@ -65,7 +65,7 @@ $UID = $_SESSION['UID'];
       class="container bd-form p-3 repository-color justify-content-center mt-3" method="post">
     <?php
     //如有id，输出图片,如无id，输出待上传
-    if (isset($_GET['imgId'])) echo '<img class="w-100 mb-3" src="../../img/travel/' . $img['PATH'] . '" alt="The Photo" id="uploadedImg">';
+    if (isset($_POST['imgId'])) echo '<img class="w-100 mb-3" src="../../img/travel/' . $img['PATH'] . '" alt="The Photo" id="uploadedImg">';
     else echo '<img class="w-100 mb-3" src="" alt="The Photo" id="uploadedImg" style="display: none">';
     ?>
     <input type="text" style="display: none" name="imgId" value="<?php echo $imgId ?>">
@@ -78,7 +78,7 @@ $UID = $_SESSION['UID'];
                 <input type="file" class="custom-file-input" id="file" name="file">
                 <label class="custom-file-label" for="file">
                     <?php
-                    if (isset($_GET['imgId'])) echo 'Change the photo';
+                    if (isset($_POST['imgId'])) echo 'Change the photo';
                     else echo 'Choose a photo';
                     ?>
                 </label>
@@ -92,7 +92,7 @@ $UID = $_SESSION['UID'];
             </div>
             <input type="text" class="form-control  p-0" placeholder="Title here" name="title" id="title" required
                 <?php
-                if (isset($_GET['imgId'])) echo 'value="' . $img['Title'] . '"';
+                if (isset($_POST['imgId'])) echo 'value="' . $img['Title'] . '"';
                 ?>>
         </div>
     </div>
@@ -154,7 +154,7 @@ $UID = $_SESSION['UID'];
             </div>
             <input type="text" class="form-control  p-0" placeholder="Country here" name="country" id="country"
             <?php
-            if (isset($_GET['imgId'])) echo ' value="' . getCountry($img['Country_RegionCodeISO']) . '"';
+            if (isset($_POST['imgId'])) echo ' value="' . getCountry($img['Country_RegionCodeISO']) . '"';
             ?>">
         </div>
     </div>
@@ -165,7 +165,7 @@ $UID = $_SESSION['UID'];
             </div>
             <input type="text" class="form-control  p-0" placeholder="City here" name="city" id="city"
             <?php
-            if (isset($_GET['imgId'])) echo ' value="' . getCity($img['CityCode']) . '"';
+            if (isset($_POST['imgId'])) echo ' value="' . getCity($img['CityCode']) . '"';
             ?>">
         </div>
     </div>
@@ -175,12 +175,13 @@ $UID = $_SESSION['UID'];
                 <span class="input-group-text w-100">Description</span>
             </div>
             <textarea class="form-control  p-0" rows="6" placeholder="Description here" id="description"
-                      name="description"><?php if (isset($_GET['imgId'])) echo $img['Description']; ?></textarea>
+                      name="description"><?php if (isset($_POST['imgId'])) echo $img['Description']; ?></textarea>
         </div>
     </div>
 
     <div class="row p-0 m-0 justify-content-center">
-        <button type="submit" class="btn btn-secondary mx-auto" id="submit">Upload</button>
+        <button type="submit" class="btn btn-secondary mx-auto"
+                id="submit"><?php if (isset($_POST['imgId'])) echo 'Modify'; else echo 'Upload' ?></button>
     </div>
 </form>
 <!--upload end-->

@@ -77,6 +77,7 @@ VALUES ("' . $email . '", "' . $name . '", "' . $pass . '", "' . $salt . '")';
     </div>
     <button type="submit" id="submit" class="btn btn-light text-mid info">Register</button>
     <div id="div"></div>
+    <a href="home.php" class="text-mid info">Browse without account</a>
 </form>
 <!--registerForm end-->
 

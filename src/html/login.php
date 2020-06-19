@@ -39,16 +39,21 @@ function validLogin()
     $statement->bindValue(':name', $_POST['name']);
     $statement->execute();
 
+    if ($statement->rowCount() < 1) {
+        echo '<script>alert("用户名或密码错误，请重试")</script>';
+        return false;
+    }
     $user = $statement->fetch();
     $passSalt = $user['Pass'];
     $salt = $user['Salt'];
     $password = $_POST['pass'];
 
     if ($passSalt == sha1($password . $salt)) {
-    global $UID;
-    $UID = $user['UID'];
-    return true;
-}
+        global $UID;
+        $UID = $user['UID'];
+        return true;
+    }
+    echo '<script>alert("用户名或密码错误，请重试")</script>';
     return false;
 }
 

@@ -79,7 +79,7 @@ submit.addEventListener("click", function (e) {
                 }
             };
             console.log("../php/uploadQuery.php?city=" + cityValue);
-            request.open("GET", "../php/uploadQuery.php?city=" + cityValue, false);
+            request.open("GET", "../php/uploadQuery.php?country="+countryValue+"&city=" + cityValue, false);
             request.send();
         }
     }

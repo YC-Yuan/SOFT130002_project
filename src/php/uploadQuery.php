@@ -3,7 +3,7 @@ require_once('pdo.php');
 require_once('query.php');
 
 
-if (isset($_GET['country'])) {
+if (!isset($_GET['city'])) {
     $country = $_GET['country'];
 
     $sql = 'SELECT * FROM `geocountries_regions` WHERE `Country_RegionName` ="' . $country . '"';
@@ -32,8 +32,11 @@ if (isset($_GET['country'])) {
     }
 } else {
     $city = $_GET['city'];
+    $country = $_GET['country'];
+    require_once('query.php');
+    $country = getCountryCode($country);
 
-    $sql = 'SELECT * FROM `geocities` WHERE `AsciiName` ="' . $city . '"';
+    $sql = 'SELECT * FROM `geocities` WHERE `Country_RegionCodeISO`="' . $country . '" AND `AsciiName` ="' . $city . '"';
     $result = pdo($sql);
     if ($result->rowCount() > 0) {
         echo 'true';
@@ -41,7 +44,7 @@ if (isset($_GET['country'])) {
     } else {
         $keys = explode(" ", $city);
         $keyNum = count($keys);
-        $sql = 'SELECT * FROM `geocities` WHERE `AsciiName` LIKE  "%' . $keys[0] . '%"';
+        $sql = 'SELECT * FROM `geocities` WHERE `Country_RegionCodeISO`="' . $country . '" AND `AsciiName` LIKE  "%' . $keys[0] . '%"';
         for ($i = 2; $i <= $keyNum; $i++) {
             $sql = $sql . ' AND `AsciiName` LIKE "%' . $keys[$i - 1] . '%"';
         }
