@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>三鱼一茶-图片详情</title>
+    <title>3Fish1tea-Details</title>
 
     <!--bootstrap4-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>三鱼一茶-浏览页</title>
+    <title>3Fish1tea-Browser</title>
 
     <!--bootstrap4-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
